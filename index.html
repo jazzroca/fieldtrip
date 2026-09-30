@@ -3,47 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>청계산 원터골-매봉 정복 & 청계산장 회식 실시간 트래커</title>
+  <title>2026 국립중앙박물관 문화 야유회 & 거울못 식당 회식</title>
   <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Black+Han+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Black+Han+Sans&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --forest-dark: #1b382b;
-      --forest-primary: #2d5a43;
-      --forest-light: #eaf3ed;
-      --accent-orange: #f26419;
-      --accent-yellow: #f6ae2d;
-      --mountain-rock: #4f5d75;
-      --beef-red: #c1292e;
-      --bg-cream: #f9f8f6;
-      --card-bg: #ffffff;
-      --border-color: #e2ddd5;
-      --shadow: 0 8px 24px rgba(0,0,0,0.06);
+      --celadon: #1F4E43;
+      --celadon-dark: #13332C;
+      --celadon-light: #E8F1EE;
+      --gold: #C5A059;
+      --gold-light: #FAF4E8;
+      --terracotta: #B33927;
+      --charcoal: #20232A;
+      --gray-bg: #F5F7F6;
+      --card-bg: #FFFFFF;
+      --border: #DDE5E2;
+      --shadow: 0 10px 25px rgba(19, 51, 44, 0.08);
       --radius: 14px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Pretendard', -apple-system, sans-serif;
-      background-color: var(--bg-cream);
-      color: #2b2d42;
-      line-height: 1.6;
+      font-family: 'Pretendard', sans-serif;
+      background-color: var(--gray-bg);
+      color: var(--charcoal);
+      line-height: 1.65;
       padding-bottom: 70px;
     }
 
-    /* Top Navigation */
+    /* Top Sticky Header */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-      padding: 0.8rem 1.5rem;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.8rem 1.8rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -53,443 +53,505 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.7rem;
     }
     .brand-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--forest-primary);
+      width: 40px;
+      height: 40px;
+      background: var(--celadon);
       color: #fff;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-    }
-    .brand-title {
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--forest-dark);
-      letter-spacing: -0.02em;
-    }
-    .brand-subtitle {
-      font-size: 0.75rem;
-      color: #718096;
-    }
-
-    .header-user-select {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .user-pill {
-      background: var(--forest-light);
-      border: 1px solid #c2e0cf;
-      padding: 0.35rem 0.8rem;
-      border-radius: 30px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--forest-dark);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    /* Hero Banner */
-    .hero-banner {
-      background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-primary) 100%);
-      color: #fff;
-      padding: 2.2rem 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-banner::after {
-      content: '⛰️';
-      position: absolute;
-      right: 5%;
-      bottom: -15px;
-      font-size: 8rem;
-      opacity: 0.12;
-      pointer-events: none;
-    }
-    .hero-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(246, 174, 45, 0.25);
-      border: 1px solid var(--accent-yellow);
-      color: var(--accent-yellow);
-      padding: 0.25rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-    }
-    .hero-title {
-      font-family: 'Black Han Sans', sans-serif;
-      font-size: 2.2rem;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.4rem;
-    }
-    .hero-desc {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.85);
-      max-width: 650px;
-    }
-
-    /* Stats Overview Bar */
-    .stats-bar {
-      max-width: 1100px;
-      margin: -1.5rem auto 1.8rem;
-      padding: 0 1rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      position: relative;
-      z-index: 10;
-    }
-    .stat-card {
-      background: #fff;
-      padding: 1.1rem 1.3rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .stat-icon {
-      width: 44px;
-      height: 44px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(31, 78, 67, 0.3);
     }
-    .stat-info h5 { font-size: 0.78rem; color: #718096; font-weight: 500; }
-    .stat-info p { font-size: 1.15rem; font-weight: 800; color: #1a202c; }
+    .brand-title {
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--celadon-dark);
+      letter-spacing: -0.02em;
+    }
+    .brand-sub {
+      font-size: 0.75rem;
+      color: #64748B;
+    }
 
-    /* Main Container */
+    .header-user-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .user-select-box {
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      border: 2px solid var(--celadon);
+      font-size: 0.88rem;
+      font-weight: 800;
+      background: #fff;
+      color: var(--celadon-dark);
+      cursor: pointer;
+    }
+
+    /* Hero Banner */
+    .hero {
+      position: relative;
+      height: 45vh;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(19, 51, 44, 0.65) 0%, rgba(19, 51, 44, 0.9) 100%),
+                  url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/National_Museum_of_Korea_20220614_001.jpg/1280px-National_Museum_of_Korea_20220614_001.jpg') center/cover no-repeat;
+    }
+    .hero-content {
+      max-width: 900px;
+      padding: 1.5rem;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(197, 160, 89, 0.25);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 0.3rem 1.1rem;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    .hero-title {
+      font-family: 'Black Han Sans', sans-serif;
+      font-size: 2.6rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Dual Gate Status Bars (Attendance & Restaurant Gate) */
+    .gates-section {
+      max-width: 1100px;
+      margin: -2.2rem auto 2.5rem;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .gate-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 1.4rem 1.8rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      border: 2px solid var(--border);
+      transition: all 0.3s;
+    }
+    .gate-card.attn-card {
+      border-color: #CBD5E1;
+      background: #FFFFFF;
+    }
+    .gate-card.locked {
+      border-color: #E2E8F0;
+      background: #FCFBF9;
+    }
+    .gate-card.unlocked {
+      border-color: #2E7D32;
+      background: #F1F8E9;
+      animation: pulseBorder 2s infinite;
+    }
+    @keyframes pulseBorder {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4); }
+      50% { box-shadow: 0 0 0 12px rgba(46, 125, 50, 0); }
+    }
+
+    .gate-left {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .gate-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .attn-card .gate-icon { background: #E0F2FE; color: #0284C7; }
+    .locked .gate-icon { background: #FEEBC8; color: #C05621; }
+    .unlocked .gate-icon { background: #C6F6D5; color: #22543D; }
+
+    .gate-info h3 { font-size: 1.15rem; font-weight: 800; color: var(--charcoal); }
+    .gate-info p { font-size: 0.85rem; color: #64748B; }
+
+    .gate-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .gate-number {
+      font-family: 'Black Han Sans', sans-serif;
+      font-size: 1.8rem;
+      color: var(--celadon-dark);
+      text-align: right;
+    }
+
+    .btn-attn {
+      background: #0284C7;
+      color: #fff;
+      border: none;
+      padding: 0.65rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    }
+    .btn-attn:hover { background: #0369A1; transform: translateY(-1px); }
+    .btn-attn.done {
+      background: #10B981;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    /* Container */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1rem;
     }
 
-    .section-title-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin: 2.5rem 0 1.2rem;
-      border-bottom: 2px solid #eae5db;
-      padding-bottom: 0.6rem;
-    }
-    .section-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--forest-dark);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    /* Action Check-in Floating Box */
-    .checkin-prompt {
-      background: #ffffff;
-      border: 2px dashed var(--forest-primary);
+    /* My Status Quick Action Bar */
+    .my-action-bar {
+      background: #fff;
       border-radius: var(--radius);
-      padding: 1.4rem;
-      margin-bottom: 2rem;
+      padding: 1.3rem 1.6rem;
+      margin-bottom: 2.2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
-      box-shadow: var(--shadow);
     }
-    .prompt-text h3 { font-size: 1.1rem; color: var(--forest-dark); font-weight: 700; }
-    .prompt-text p { font-size: 0.88rem; color: #64748b; }
-    .btn-checkin {
-      background: var(--accent-orange);
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1.6rem;
-      border-radius: 30px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
+    .my-info-status h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--celadon-dark);
+    }
+    .my-info-status p {
+      font-size: 0.85rem;
+      color: #64748B;
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin: 2.8rem 0 1.2rem;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 0.6rem;
+    }
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--celadon-dark);
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      box-shadow: 0 4px 14px rgba(242, 100, 25, 0.35);
-      transition: transform 0.15s, background 0.2s;
-    }
-    .btn-checkin:hover {
-      background: #d9530f;
-      transform: translateY(-2px);
     }
 
-    /* Mountain Map Visualization (Altitude & Points) */
-    .map-board {
-      background: #fff;
+    /* Checkpoint Card Grid */
+    .spots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.4rem;
+      margin-bottom: 3.5rem;
+    }
+    .spot-card {
+      background: var(--card-bg);
       border-radius: var(--radius);
-      padding: 1.8rem 1.4rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      border: 1px solid var(--border-color);
-      margin-bottom: 2.5rem;
-      overflow-x: auto;
-    }
-    .course-route {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      min-width: 820px;
-      padding: 3.5rem 1rem 2rem;
-    }
-    .route-line {
-      position: absolute;
-      top: 4.8rem;
-      left: 3rem;
-      right: 3rem;
-      height: 6px;
-      background: linear-gradient(to right, #48bb78, #f6ae2d, #f26419, #c1292e);
-      border-radius: 4px;
-      z-index: 1;
-    }
-    .checkpoint-node {
-      position: relative;
-      z-index: 2;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      width: 100px;
-      cursor: pointer;
-      text-align: center;
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s;
     }
-    .node-pin {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: #fff;
-      border: 3px solid var(--forest-primary);
+    .spot-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+    }
+    .spot-card.completed {
+      border: 2px solid var(--celadon);
+    }
+    .spot-thumb-wrap {
+      position: relative;
+      height: 170px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .spot-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .spot-thumb-wrap:hover .spot-thumb { transform: scale(1.08); }
+    .spot-badge {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      background: rgba(19, 51, 44, 0.85);
+      color: #fff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      backdrop-filter: blur(4px);
+    }
+    .stamp-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(31, 78, 67, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+    .spot-card.completed .stamp-overlay { display: flex; }
+
+    .spot-body {
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .spot-cat {
+      font-size: 0.76rem;
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 0.3rem;
+    }
+    .spot-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .spot-desc {
+      font-size: 0.84rem;
+      color: #4A5568;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .btn-spot-action {
+      background: var(--celadon);
+      color: #fff;
+      border: none;
+      padding: 0.65rem;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      gap: 0.4rem;
+      transition: background 0.2s;
     }
-    .checkpoint-node:hover .node-pin {
-      transform: scale(1.15);
-      border-color: var(--accent-orange);
-    }
-    .node-pin.special-feasting {
-      background: var(--beef-red);
-      color: #fff;
-      border-color: #ffd166;
-    }
-    .node-name {
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-top: 0.7rem;
-      color: #2d3748;
-    }
-    .node-alt {
-      font-size: 0.72rem;
-      color: #a0aec0;
+    .btn-spot-action:hover { background: var(--celadon-dark); }
+    .spot-card.completed .btn-spot-action {
+      background: #EDF2F7;
+      color: #64748B;
     }
 
-    /* Live Member Tags in Nodes */
-    .node-members-floating {
-      position: absolute;
-      top: -3.2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.2rem;
-      min-height: 40px;
-    }
-    .member-bubble {
-      background: var(--forest-dark);
-      color: #fff;
-      font-size: 0.72rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      animation: bounce 1.8s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
-    .member-bubble.feasting {
-      background: var(--beef-red);
-      border: 1px solid #ffbc42;
-    }
-
-    /* Team Member Live Dashboard */
+    /* 9 Team Members Status Dashboard Grid */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.3rem;
+      margin-bottom: 3.5rem;
     }
     .member-card {
       background: #fff;
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.2rem 1.4rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      padding: 1.3rem;
+      box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
     }
     .member-card.is-me {
-      border: 2px solid var(--forest-primary);
-      background: #fdfefe;
+      border: 2px solid var(--celadon);
+      background: #FAFDFB;
     }
-    .card-top {
+    .member-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 0.8rem;
     }
-    .member-avatar-wrap {
+    .member-info-left {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.65rem;
     }
     .member-avatar {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: var(--forest-light);
-      color: var(--forest-dark);
+      background: var(--celadon-light);
+      color: var(--celadon-dark);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      border: 2px solid #c8e6d5;
+      font-weight: 900;
+      font-size: 0.95rem;
+      border: 2px solid #C2E0CF;
     }
-    .member-info h4 { font-size: 0.98rem; font-weight: 700; }
-    .member-info span { font-size: 0.75rem; color: #718096; }
-    .member-location-pill {
-      background: #edf2f7;
-      color: #2b6cb0;
+    .member-name h4 { font-size: 1.02rem; font-weight: 800; }
+    .member-name span { font-size: 0.74rem; color: #64748B; }
+
+    .member-badge-count {
+      background: var(--gold-light);
+      color: #7B5E14;
+      font-size: 0.76rem;
+      font-weight: 800;
       padding: 0.25rem 0.65rem;
       border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
     }
-    .member-location-pill.at-feasting {
-      background: #ffe3e3;
-      color: var(--beef-red);
-    }
-    .card-msg {
-      font-size: 0.86rem;
-      color: #4a5568;
-      background: #f7fafc;
-      padding: 0.6rem 0.8rem;
-      border-radius: 8px;
-      margin-bottom: 0.6rem;
-      border-left: 3px solid var(--forest-primary);
-    }
-    .card-time {
-      font-size: 0.74rem;
-      color: #a0aec0;
-      text-align: right;
+    .member-badge-count.all-done {
+      background: #C6F6D5;
+      color: #22543D;
     }
 
-    /* Cheonggyesanjang Feasting Section */
-    .feasting-banner {
-      background: linear-gradient(135deg, #780000 0%, #c1121f 100%);
+    .member-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+    .pill-arrived { background: #E0F2FE; color: #0284C7; }
+    .pill-waiting { background: #FEE2E2; color: #EF4444; }
+
+    .member-recent-msg {
+      background: #F8FAFC;
+      border-left: 3px solid var(--celadon);
+      padding: 0.6rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      color: #334155;
+      margin-bottom: 0.6rem;
+    }
+    .member-time-meta {
+      font-size: 0.74rem;
+      color: #94A3B8;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Final Destination Banner (Mirror Pond Restaurant) */
+    .restaurant-detail-banner {
+      background: linear-gradient(135deg, #13332C 0%, #1F4E43 100%);
       color: #fff;
       border-radius: var(--radius);
       padding: 2.2rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 10px 30px rgba(120, 0, 0, 0.2);
+      margin-bottom: 3.5rem;
+      box-shadow: 0 12px 30px rgba(19, 51, 44, 0.2);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1.8rem;
+      gap: 2rem;
     }
-    .feasting-text {
-      max-width: 600px;
-    }
-    .feasting-badge {
-      background: #ffd166;
-      color: #780000;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
+    .rest-content { max-width: 620px; }
+    .rest-tag {
+      background: var(--gold);
+      color: var(--charcoal);
+      font-size: 0.78rem;
       font-weight: 800;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
       display: inline-block;
       margin-bottom: 0.8rem;
     }
-    .feasting-text h3 {
-      font-size: 1.7rem;
+    .rest-content h2 {
+      font-size: 1.8rem;
       font-weight: 800;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
     }
-    .feasting-text p {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.9);
+    .rest-content p {
+      font-size: 0.94rem;
+      color: rgba(255,255,255,0.88);
       line-height: 1.6;
     }
-    .feasting-counter-box {
-      background: rgba(0,0,0,0.25);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 1.4rem 1.8rem;
-      border-radius: 12px;
-      text-align: center;
-      min-width: 200px;
-    }
-    .counter-number {
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: #ffd166;
-      font-family: 'Black Han Sans', sans-serif;
-    }
-    .feasting-links {
+    .rest-links {
       display: flex;
-      gap: 0.6rem;
-      margin-top: 1rem;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
     }
-    .btn-map-link {
+    .btn-rest {
       background: #fff;
-      color: #780000;
-      padding: 0.5rem 1rem;
+      color: var(--celadon-dark);
+      padding: 0.55rem 1.1rem;
       border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 700;
+      font-size: 0.85rem;
+      font-weight: 800;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       text-decoration: none;
+      transition: transform 0.15s;
     }
+    .btn-rest:hover { transform: translateY(-2px); }
 
-    /* Modal */
+    /* Modals & Passcode Verification */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(5px);
       z-index: 200;
       display: none;
       align-items: center;
@@ -503,7 +565,7 @@
       border-radius: var(--radius);
       padding: 2rem;
       position: relative;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     }
     .modal-close {
       position: absolute;
@@ -513,528 +575,662 @@
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
-      color: #a0aec0;
+      color: #94A3B8;
     }
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
+    .form-group { margin-bottom: 1.2rem; }
     .form-group label {
       display: block;
       font-size: 0.86rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 0.4rem;
-      color: #2d3748;
+      color: var(--charcoal);
     }
-    .form-group select, .form-group input, .form-group textarea {
+    .form-group input, .form-group textarea {
       width: 100%;
       padding: 0.75rem 0.9rem;
-      border: 1px solid #cbd5e0;
+      border: 1px solid #CBD5E1;
       border-radius: 8px;
       font-family: inherit;
       font-size: 0.92rem;
     }
-    .btn-submit {
-      width: 100%;
-      background: var(--forest-primary);
-      color: #fff;
-      padding: 0.85rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
+    .security-note {
+      font-size: 0.78rem;
+      color: #EF4444;
+      margin-top: 0.3rem;
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.3rem;
     }
 
-    /* Spot Info Modal View */
-    .spot-detail-box {
-      text-align: center;
-    }
-    .spot-detail-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
+    /* Lightbox Modal */
+    #lightboxModal img {
+      max-width: 90vw;
+      max-height: 80vh;
       border-radius: 10px;
-      margin-bottom: 1rem;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.5);
     }
 
     /* Footer */
     footer {
-      background: #1a202c;
-      color: #a0aec0;
+      background: #111827;
+      color: #9CA3AF;
       text-align: center;
-      padding: 2.2rem 1rem;
+      padding: 2.5rem 1rem;
       font-size: 0.85rem;
     }
     footer strong { color: #fff; }
 
     @media (max-width: 768px) {
-      .hero-title { font-size: 1.7rem; }
-      .checkin-prompt { flex-direction: column; align-items: stretch; text-align: center; }
-      .btn-checkin { justify-content: center; }
+      .hero-title { font-size: 1.9rem; }
+      .gate-card { flex-direction: column; align-items: stretch; text-align: center; }
+      .gate-left { flex-direction: column; }
+      .gate-right { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
+  <!-- Top Sticky Navigation Header -->
   <header>
     <div class="brand">
-      <div class="brand-icon"><i class="fa-solid fa-mountain"></i></div>
+      <div class="brand-icon"><i class="fa-solid fa-landmark"></i></div>
       <div>
-        <div class="brand-title">청계산 정복 & 청계산장</div>
-        <div class="brand-subtitle">원터골-매봉 9인 실시간 산행 동행</div>
+        <div class="brand-title">국립중앙박물관 문화 야유회</div>
+        <div class="brand-sub">09:30 집결 출석 &amp; 8대 명소 완주 후 거울못 식당</div>
       </div>
     </div>
-    <div class="header-user-select">
-      <label for="currentUserSelect" style="font-size: 0.82rem; font-weight: 600; color: #4a5568;">내 프로필:</label>
-      <select id="currentUserSelect" onchange="changeCurrentUser(this.value)" style="padding: 0.35rem 0.6rem; border-radius: 6px; border: 1px solid #cbd5e0; font-size: 0.85rem; font-weight: 600; background: #fff;">
-        <!-- Filled by JS -->
+    <div class="header-user-wrap">
+      <label for="userSelect" style="font-size:0.84rem; font-weight:800; color:var(--celadon-dark);">내 프로필:</label>
+      <select id="userSelect" class="user-select-box" onchange="onUserSelectChange(this.value)">
+        <!-- Injected by JS -->
       </select>
     </div>
   </header>
 
   <!-- Hero Banner -->
-  <section class="hero-banner">
+  <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">⛰️ 2026 청계산 팀 빌딩 산행</div>
-      <h1 class="hero-title">청계산 매봉 정복 & 한우 청계산장 회식</h1>
-      <p class="hero-desc">신분당선 청계산입구역 집결부터 원터골 1,500계단 깔딱고개, 돌문바위 정기 받기, 매봉 정상석 인증까지! 9명의 팀원이 어디쯤 오르고 있는지 실시간으로 확인하고 청계산장에서 만나요!</p>
+      <div class="hero-badge">🏛️ 2026 부품기술연구팀 야유회</div>
+      <h1 class="hero-title">국립중앙박물관 9인 명작 탐방</h1>
+      <p class="hero-desc">
+        오전 09:30 집결 출석 체크 완료 후 8대 명소 스탬프 투어를 시작합니다. 9명 전원이 100% 관람을 완료해야 최종 '거울못 식당' 회식 장소로 이동할 수 있습니다!
+      </p>
     </div>
   </section>
 
-  <!-- Quick Stats Bar -->
-  <div class="stats-bar">
-    <div class="stat-card">
-      <div class="stat-icon" style="background:#e6fffa; color:#319795;"><i class="fa-solid fa-person-hiking"></i></div>
-      <div class="stat-info">
-        <h5>총 참가 팀원</h5>
-        <p>9명 전원 참여 중</p>
+  <!-- Dual Status Gates Section -->
+  <div class="gates-section">
+    <!-- Gate 1: 09:30 Attendance Gate -->
+    <div class="gate-card attn-card">
+      <div class="gate-left">
+        <div class="gate-icon"><i class="fa-solid fa-user-check"></i></div>
+        <div class="gate-info">
+          <h3>09:30 집결 참여 현황 (<span id="attnDoneCountText">0 / 9명 출석</span>)</h3>
+          <p id="attnStatusSub">박물관 입구에 도착한 팀원은 본인 인증(사번 입력)을 통해 출석을 완료해주세요.</p>
+        </div>
+      </div>
+      <div class="gate-right">
+        <button class="btn-attn" id="btnHeaderAttn" onclick="openAttendanceModal()">
+          <i class="fa-solid fa-fingerprint"></i> <span id="btnAttnLabel">09:30 출석 체크하기</span>
+        </button>
       </div>
     </div>
-    <div class="stat-card">
-      <div class="stat-icon" style="background:#feebc8; color:#dd6b20;"><i class="fa-solid fa-flag-checkered"></i></div>
-      <div class="stat-info">
-        <h5>매봉(582.5m) 완등</h5>
-        <p id="summitCountText">0명 정복 완료</p>
+
+    <!-- Gate 2: Final Restaurant Gate (Locked / Unlocked) -->
+    <div class="gate-card locked" id="restaurantGateCard">
+      <div class="gate-left">
+        <div class="gate-icon" id="restGateIcon"><i class="fa-solid fa-lock"></i></div>
+        <div class="gate-info">
+          <h3 id="restGateTitle">거울못 식당 회식 이동: 관람 진행 중 (입장 잠김 🔒)</h3>
+          <p id="restGateSub">9명 전원 집결 출석 및 8개 미션 명소를 100% 관람 완료해야 식당으로 이동할 수 있습니다.</p>
+        </div>
       </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon" style="background:#fed7d7; color:#e53e3e;"><i class="fa-solid fa-utensils"></i></div>
-      <div class="stat-info">
-        <h5>청계산장 도착 현황</h5>
-        <p id="feastingCountText">0명 도착 완료</p>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon" style="background:#ebf8ff; color:#3182ce;"><i class="fa-solid fa-clock"></i></div>
-      <div class="stat-info">
-        <h5>현재 산행 시각</h5>
-        <p id="currentLiveClock">13:10:00</p>
+      <div class="gate-right">
+        <div class="gate-number" id="restGateCountText">0 / 9명 완주</div>
       </div>
     </div>
   </div>
 
   <div class="container">
 
-    <!-- Action Check-in Prompt Bar -->
-    <div class="checkin-prompt">
-      <div class="prompt-text">
-        <h3 id="myPromptTitle">현재 <span id="myNameSpan" style="color:var(--forest-primary);">나</span>의 위치는 어디인가요?</h3>
-        <p>각자 통과 중인 지점을 클릭해 상태를 갱신하면 시간과 한줄 후기가 자동으로 팀원들에게 공유됩니다.</p>
+    <!-- My Quick Status Bar -->
+    <div class="my-action-bar">
+      <div class="my-info-status">
+        <h4>
+          👤 <span id="myProfileName" style="color:var(--celadon); font-size:1.15rem;">김성우</span>님의 상태: 
+          <span id="myAttnBadge" class="member-status-pill pill-waiting">출석 대기</span>
+          <span id="myMissionProgress" style="font-size:0.9rem; font-weight:800; color:var(--terracotta); margin-left:0.5rem;">0/8 미션 완주</span>
+        </h4>
+        <p>각 미션 지점 방문 시 사번 6자리를 입력하여 체크인하면 시각과 현장 소감이 실시간 공유됩니다.</p>
       </div>
-      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
-        <button class="btn-checkin" onclick="openCheckinModal()">
-          <i class="fa-solid fa-location-crosshairs"></i> 내 위치 체크인하기
+      <div style="display:flex; gap:0.6rem;">
+        <button onclick="simulateAllFinish()" style="background:#4A5568; color:#fff; border:none; padding:0.6rem 1.1rem; border-radius:8px; font-size:0.82rem; font-weight:800; cursor:pointer;">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> 전원 완주 시뮬레이션 (데모)
         </button>
-        <button class="btn-checkin" style="background: #4a5568;" onclick="simulateProgression()">
-          <i class="fa-solid fa-shuffle"></i> 시뮬레이션 이동 (데모)
+        <button onclick="resetData()" style="background:#EDF2F7; color:#64748B; border:none; padding:0.6rem 0.9rem; border-radius:8px; font-size:0.82rem; font-weight:700; cursor:pointer;">
+          <i class="fa-solid fa-rotate-right"></i> 초기화
         </button>
       </div>
     </div>
 
-    <!-- Section 1: Live Mountain Route & Map Board -->
-    <div class="section-title-wrap">
+    <!-- Section 1: 8 Museum Checkpoint Missions -->
+    <div class="section-header">
       <div class="section-title">
-        <i class="fa-solid fa-map-location-dot"></i> 전체 산행 루트 & 팀원 위치 지도
+        <i class="fa-solid fa-map-location-dot"></i> 국립중앙박물관 8대 필수 미션 명소
       </div>
-      <span style="font-size: 0.8rem; color: #718096;">*지점 아이콘을 누르면 상세 정보와 현재 머문 팀원을 볼 수 있습니다.</span>
+      <span style="font-size:0.82rem; color:#64748B;">*사진 클릭 시 고화질 확대 / 사번 인증 후 스탬프 등록</span>
     </div>
 
-    <div class="map-board">
-      <div class="course-route" id="courseRouteContainer">
-        <div class="route-line"></div>
-        <!-- Checkpoint Nodes generated by JS -->
-      </div>
+    <div class="spots-grid" id="spotsGrid">
+      <!-- Injected by JS -->
     </div>
 
-    <!-- Section 2: Team Members Live Dashboard Cards -->
-    <div class="section-title-wrap">
+    <!-- Section 2: 9 Team Members Live Dashboard -->
+    <div class="section-header">
       <div class="section-title">
-        <i class="fa-solid fa-users"></i> 9인 팀원 실시간 현황 & 후기 피드
+        <i class="fa-solid fa-users"></i> 9인 팀원 실시간 출석 &amp; 미션 레이더
       </div>
-      <button onclick="resetData()" style="background:none; border:none; color:#a0aec0; font-size:0.8rem; cursor:pointer;">
-        <i class="fa-solid fa-arrows-rotate"></i> 초기화
-      </button>
+      <span style="font-size:0.82rem; color:#64748B;">동료들의 출석 시각과 현재 위치를 확인하세요.</span>
     </div>
 
-    <div class="team-grid" id="teamCardsContainer">
-      <!-- Member Cards Generated by JS -->
+    <div class="team-grid" id="teamCards">
+      <!-- Injected by JS -->
     </div>
 
-    <!-- Section 3: Final Feasting Destination - Cheonggyesanjang -->
-    <div class="feasting-banner">
-      <div class="feasting-text">
-        <div class="feasting-badge">FINAL DESTINATION</div>
-        <h3>🥩 청계산 산자락 맛집: '청계산장' 최종 집결</h3>
+    <!-- Section 3: Final Destination - Mirror Pond Restaurant -->
+    <div class="restaurant-detail-banner">
+      <div class="rest-content">
+        <span class="rest-tag">FINAL DESTINATION</span>
+        <h2>🍽️ 국립중앙박물관 야외 정원 '거울못 식당'</h2>
         <p>
-          <strong>주소:</strong> 경기도 성남시 수정구 청계산로 442 (상적동)<br>
-          37년 전통의 숯불 한우 생등심 전문점! 야외 파라솔 아래서 즐기는 육즙 가득한 등심과 칼칼한 시골 된장찌개, 감자수제비, 비빔냉면으로 산행 피로를 싹 풀고 즐거운 회식을 시작합니다!
+          <strong>위치:</strong> 국립중앙박물관 야외 거울못 호수 옆 테라스<br>
+          호수와 남산타워가 한눈에 들어오는 탁 트인 테라스 다이닝! 화덕 피자, 시그니처 파스타, 스테이크와 와인/맥주를 곁들인 즐거운 팀 야유회 최종 회식 장소입니다.
         </p>
-        <div class="feasting-links">
-          <a href="https://map.naver.com/p/search/청계산장" target="_blank" class="btn-map-link">
-            <i class="fa-solid fa-map-pin"></i> 네이버 지도
+        <div class="rest-links">
+          <a href="https://map.naver.com/p/search/국립중앙박물관%20거울못식당" target="_blank" class="btn-rest">
+            <i class="fa-solid fa-map-location-dot"></i> 네이버 지도 길찾기
           </a>
-          <a href="https://map.kakao.com/?q=청계산장" target="_blank" class="btn-map-link">
-            <i class="fa-solid fa-location-arrow"></i> 카카오맵 길찾기
+          <a href="https://map.kakao.com/?q=국립중앙박물관%20거울못식당" target="_blank" class="btn-rest">
+            <i class="fa-solid fa-location-arrow"></i> 카카오맵 연결
           </a>
         </div>
       </div>
-      <div class="feasting-counter-box">
-        <div style="font-size:0.85rem; color:rgba(255,255,255,0.8); margin-bottom:0.2rem;">청계산장 도착 현황</div>
-        <div class="counter-number" id="feastingBigNumber">0 / 9</div>
-        <div style="font-size:0.8rem; color:#ffd166; margin-top:0.2rem;">9명 전원 모이면 건배! 🍻</div>
+      <div style="background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.2); padding:1.6rem 2.2rem; border-radius:12px; text-align:center; min-width:210px;">
+        <div style="font-size:0.85rem; color:var(--gold-light);">거울못 식당 입장 현황</div>
+        <div style="font-size:2.5rem; font-family:'Black Han Sans', sans-serif; color:#fff;" id="restArrivedCount">0 / 9명</div>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.7); margin-top:0.3rem;">전원 완주 시 식당 입장 🥂</div>
       </div>
     </div>
 
   </div>
 
-  <!-- Check-in Modal -->
-  <div class="modal-overlay" id="checkinModal">
+  <!-- Attendance Modal (Security Passcode) -->
+  <div class="modal-overlay" id="attendanceModal">
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('checkinModal')">&times;</button>
-      <h3 style="margin-bottom: 1rem; color: var(--forest-dark); font-size: 1.25rem;">
-        📍 <span id="modalUserName"></span> 위치 체크인
+      <button class="modal-close" onclick="closeModal('attendanceModal')">&times;</button>
+      <h3 style="color:var(--celadon-dark); font-size:1.25rem; margin-bottom:0.4rem;">
+        📍 09:30 집결 출석 체크 (<span id="modalAttnUserName"></span>)
       </h3>
+      <p style="font-size:0.85rem; color:#64748B; margin-bottom:1.2rem;">
+        본인 확인을 위해 사번 6자리를 입력해주세요. 출석 등록 시 시각이 자동 기록됩니다.
+      </p>
 
       <div class="form-group">
-        <label>현재 도달한 위치 선택</label>
-        <select id="selectSpot">
-          <!-- Options populated by JS -->
-        </select>
+        <label>사번 6자리 입력</label>
+        <input type="password" id="inputAttnEmpId" placeholder="예: 232605" maxlength="6" autocomplete="off">
+        <div class="security-note"><i class="fa-solid fa-shield-halved"></i> 본인 사번과 일치해야만 출석이 인정됩니다.</div>
       </div>
 
-      <div class="form-group">
-        <label>현장 한줄 후기 및 상태 메시지</label>
-        <input type="text" id="inputComment" placeholder="예: 깔딱고개 계단 진짜 매콤하네요! 숨 고르는 중 💦">
-      </div>
-
-      <div class="form-group" style="background:#f7fafc; padding:0.8rem; border-radius:8px; font-size:0.82rem; color:#4a5568;">
-        <i class="fa-regular fa-clock"></i> <strong>도착 시간:</strong> 현재 시각이 자동으로 기록됩니다.
-      </div>
-
-      <button class="btn-submit" onclick="submitCheckin()">
-        <i class="fa-solid fa-check"></i> 체크인 등록 및 위치 전송
+      <button onclick="submitAttendance()" style="width:100%; background:#0284C7; color:#fff; border:none; padding:0.85rem; border-radius:8px; font-weight:800; font-size:0.95rem; cursor:pointer;">
+        09:30 출석 체크 완료
       </button>
     </div>
   </div>
 
-  <!-- Spot Detail Modal -->
-  <div class="modal-overlay" id="spotDetailModal">
-    <div class="modal-box spot-detail-box">
-      <button class="modal-close" onclick="closeModal('spotDetailModal')">&times;</button>
-      <h3 id="spotDetailTitle" style="color:var(--forest-dark); margin-bottom:0.4rem;"></h3>
-      <p id="spotDetailAlt" style="font-size:0.85rem; color:#718096; margin-bottom:1rem;"></p>
-      <p id="spotDetailDesc" style="font-size:0.92rem; color:#4a5568; line-height:1.6; margin-bottom:1.2rem; text-align:left; background:#f7fafc; padding:0.8rem; border-radius:8px;"></p>
-      
-      <div style="text-align:left;">
-        <h5 style="font-size:0.85rem; font-weight:700; color:var(--forest-dark); margin-bottom:0.4rem;">
-          👥 현재 이 지점에 있는 팀원:
-        </h5>
-        <div id="spotDetailMembers" style="display:flex; gap:0.4rem; flex-wrap:wrap;"></div>
+  <!-- Mission Check-in Modal (Security Passcode) -->
+  <div class="modal-overlay" id="missionModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('missionModal')">&times;</button>
+      <h3 style="color:var(--celadon-dark); font-size:1.25rem; margin-bottom:0.4rem;">
+        🏛️ <span id="modalMissionSpotName"></span> 미션 체크인
+      </h3>
+      <p style="font-size:0.85rem; color:#64748B; margin-bottom:1.2rem;">
+        관람 완료 스탬프 등록을 위해 사번 6자리를 입력해주세요.
+      </p>
+
+      <div class="form-group">
+        <label>사번 6자리 입력</label>
+        <input type="password" id="inputMissionEmpId" placeholder="본인 사번 입력" maxlength="6" autocomplete="off">
       </div>
+
+      <div class="form-group">
+        <label>현장 한 줄 감상평 / 소감</label>
+        <textarea id="modalMissionComment" rows="3" placeholder="예: 반가사유상의 온화한 미소에 마음이 절로 편안해집니다."></textarea>
+      </div>
+
+      <button onclick="submitMissionCheckin()" style="width:100%; background:var(--celadon); color:#fff; border:none; padding:0.85rem; border-radius:8px; font-weight:800; font-size:0.95rem; cursor:pointer;">
+        스탬프 등록 &amp; 실시간 공유
+      </button>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="modal-overlay" id="lightboxModal" onclick="closeModal('lightboxModal')">
+    <div style="text-align: center;">
+      <img id="lightboxImg" src="" alt="확대 사진">
+      <p id="lightboxCaption" style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem; font-weight:700;"></p>
     </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p><strong>청계산 원터골-매봉 정복 & 청계산장 회식 실시간 트래커</strong></p>
-    <p style="margin-top:0.4rem; font-size:0.75rem;">신분당선 청계산입구역(2번출구) → 원터골 쉼터 → 깔딱고개 → 헬기장 → 돌문바위 → 매바위 → 매봉 정상 → 청계산장</p>
+    <p><strong>국립중앙박물관 문화 야유회 &amp; 거울못 식당 회식 트래커</strong></p>
+    <p style="margin-top:0.4rem; font-size:0.75rem;">부품기술연구팀 9인 단체 산책 · 집결지: 이촌역 2번 출구 박물관 나들길</p>
   </footer>
 
   <script>
-    // 1. Course Checkpoint Landmarks Definition
-    const checkpoints = [
-      { id: 'spot_0', name: '청계산입구역', alt: '신분당선 2번출구', icon: '🚇', desc: '등산의 출발점! 지하철 2번 출구 앞 광장에서 9명의 팀원이 모두 집결하여 산행 준비 및 스트레칭을 하는 지점입니다.' },
-      { id: 'spot_1', name: '원터골 입구', alt: '굴다리 & 마당', icon: '🌲', desc: '경부고속도로 하부 굴다리를 통과해 아웃도어 매장과 원터골 등산로 입구 표지석이 있는 본격적인 산행 들머리입니다.' },
-      { id: 'spot_2', name: '원터골 쉼터', alt: '생태경관보전지역', icon: '⛩️', desc: '원터골 약수터 인근 팔각정과 벤치가 있는 쉼터입니다. 옥녀봉 갈림길과 매봉 본 코스가 나뉘는 지점으로 가벼운 수분 섭취를 합니다.' },
-      { id: 'spot_3', name: '깔딱고개', alt: '1,500 목재계단', icon: '🪜', desc: '청계산의 명물, 끝없는 통나무 계단이 이어지는 마의 구간! 심박수가 최고조에 달하며 허벅지가 단련되는 지점입니다.' },
-      { id: 'spot_4', name: '제1 헬기장', alt: '능선 조망쉼터', icon: '🚁', desc: '계단 지옥을 통과하고 만나는 시원한 능선 평지! 바람이 불어오고 휴식과 간식을 즐기기 좋은 조망 명소입니다.' },
-      { id: 'spot_5', name: '돌문바위', alt: '청계산 소원명소', icon: '🪨', desc: '거대한 바위가 문 모양을 이루고 있는 청계산의 영험한 장소. 세 바퀴를 돌면서 소원을 빌면 청계산의 정기를 듬뿍 받습니다.' },
-      { id: 'spot_6', name: '매바위', alt: '해발 578m', icon: '🦅', desc: '매봉 직전에 우뚝 솟은 거대한 암봉. 강남 도심과 롯데월드타워, 관악산까지 한눈에 펼쳐지는 최고의 뷰포인트입니다.' },
-      { id: 'spot_7', name: '매봉 정상', alt: '해발 582.5m', icon: '🚩', desc: '청계산의 실질적인 정상! 정상석 앞에서 완등 기념 인증샷을 남기고 성취감을 만끽하는 목표 지점입니다.' },
-      { id: 'spot_8', name: '청계산장', alt: '한우 숯불 회식', icon: '🥩', desc: '하산 후 모두 모이는 최종 목적지! 37년 전통 야외 파라솔에서 시원한 바람과 함께 한우 생등심 숯불구이와 회식을 즐깁니다.' }
+    // 1. Fixed 9 Team Members & Strict Employee ID Mapping
+    const fixedTeamMembers = [
+      { id: 1, name: '김성우', empId: '232605', role: '팀장' },
+      { id: 2, name: '이상훈', empId: '245137', role: '팀원' },
+      { id: 3, name: '조성훈', empId: '316733', role: '팀원' },
+      { id: 4, name: '표상옥', empId: '269735', role: '팀원' },
+      { id: 5, name: '모정기', empId: '275880', role: '팀원' },
+      { id: 6, name: '박은비', empId: '314797', role: '팀원' },
+      { id: 7, name: '서병구', empId: '273166', role: '팀원' },
+      { id: 8, name: '김채선', empId: '110848', role: '팀원' },
+      { id: 9, name: '박형배', empId: '113633', role: '팀원' }
     ];
 
-    // 2. Preset 9 Team Members
-    const defaultMembers = [
-      { id: 1, name: '김성우 팀장', role: '리더', spotId: 'spot_6', comment: '매바위 조망 끝내주네요! 정상석 선착순 대기 중입니다.', time: '13:02:15' },
-      { id: 2, name: '박수진 과장', role: '부팀장', spotId: 'spot_5', comment: '돌문바위 세 바퀴 돌고 프로젝트 대박 기원 완료!', time: '12:58:40' },
-      { id: 3, name: '이민호 차장', role: '팀원', spotId: 'spot_7', comment: '매봉 정상 도착!! 다들 천천히 조심해서 올라오세요.', time: '13:08:20' },
-      { id: 4, name: '최영호 대리', role: '팀원', spotId: 'spot_4', comment: '헬기장에서 오이 하나 먹고 다시 매봉으로 출발합니다.', time: '12:50:11' },
-      { id: 5, name: '정다혜 대리', role: '팀원', spotId: 'spot_3', comment: '깔딱고개 계단 진짜 벅차네요 ㅋㅋㅋ 물 나눠 드실 분!', time: '12:45:00' },
-      { id: 6, name: '강동원 사원', role: '팀원', spotId: 'spot_8', comment: '선발대로 청계산장 먼저 내려와서 야외 테이블 예약 잡았습니다!', time: '13:05:30' },
-      { id: 7, name: '윤지민 사원', role: '팀원', spotId: 'spot_3', comment: '다혜 대리님 뒤따라가는 중입니다! 화이팅!', time: '12:46:12' },
-      { id: 8, name: '한태양 인턴', role: '팀원', spotId: 'spot_2', comment: '원터골 쉼터에서 숨 고르고 계단 코스 진입 준비 중입니다.', time: '12:35:50' },
-      { id: 9, name: '송유나 사원', role: '팀원', spotId: 'spot_2', comment: '날씨가 너무 맑아서 등산하기 정말 좋네요!', time: '12:38:10' }
+    // 2. National Museum of Korea 8 Checkpoint Missions
+    const museumMissions = [
+      {
+        id: 'spot_1',
+        name: '거울못 & 청자정',
+        category: '야외 전통정원',
+        location: '박물관 정문 앞 호수',
+        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/National_Museum_of_Korea_20220614_001.jpg/1280px-National_Museum_of_Korea_20220614_001.jpg',
+        desc: '박물관 전면에 위치한 드넓은 전통 연못 정원. 호수 물결에 비치는 박물관 건축과 청자기와를 얹은 우아한 청자정의 반영을 감상합니다.'
+      },
+      {
+        id: 'spot_2',
+        name: '열린마당 (남산타워 뷰)',
+        category: '건축 & 포토존',
+        location: '박물관 메인 중정',
+        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/National_Museum_of_Korea_20220614_005.jpg/1280px-National_Museum_of_Korea_20220614_005.jpg',
+        desc: '동관과 서관 사이 거대한 열린 구조물 사이로 N서울타워와 남산 풍경이 액자처럼 담기는 대한민국 최고의 건축 뷰포인트. 단체 인증샷 명소!'
+      },
+      {
+        id: 'spot_3',
+        name: '경천사지 십층석탑',
+        category: '국보 제86호',
+        location: '상설전시관 1층 역사의 길',
+        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/National_Museum_of_Korea-Ten-story_Stone_Pagoda_from_Gyeongcheonsa_Temple_Site-01.jpg/800px-National_Museum_of_Korea-Ten-story_Stone_Pagoda_from_Gyeongcheonsa_Temple_Site-01.jpg',
+        desc: '고려 후기(1348년) 대리석으로 제작된 13.5m 높이의 걸작 불탑. 전통 목조건축 양식과 서유기 설화가 섬세하게 조각되어 로비 천장을 뚫을 듯 장엄합니다.'
+      },
+      {
+        id: 'spot_4',
+        name: '신라 금관 & 금허리띠',
+        category: '국보 제191호',
+        location: '1층 선사·고대관 신라실',
+        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gold_Crown_from_the_North_Mound_of_Hwangnamdaechong_Tomb.jpg/800px-Gold_Crown_from_the_North_Mound_of_Hwangnamdaechong_Tomb.jpg',
+        desc: '황남대총 북분에서 출토된 황금의 나라 신라의 정수. 사슴뿔과 나뭇가지 형태의 세움식 장식과 영롱한 비취 옥이 화려함의 극치를 보여줍니다.'
+      },
+      {
+        id: 'spot_5',
+        name: '사유의 방 (반가사유상)',
+        category: '국보 78호 & 83호',
+        location: '상설전시관 2층 전용관',
+        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Gilt-bronze_Maitreya_in_Meditation_%28National_Treasure_No._83%29.jpg/800px-Gilt-bronze_Maitreya_in_Meditation_%28National_Treasure_No._83%29.jpg',
+        desc: '국보 반가사유상 두 점이 어둠 속 은은한 조명 아래 나란히 자리한 몰입형 사유 공간. 생로병사의 고뇌를 넘어선 깊은 미소가 큰 위로를 건넵니다.'
+      },
+      {
+        id: 'spot_6',
+        name: '청자 투각향로 & 달항아리',
+        category: '도자공예관 명품',
+        location: '상설전시관 3층 조각·공예관',
+        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Celadon_Incense_Burner_with_Openwork_Design_%28National_Treasure_No._95%29.jpg/800px-Celadon_Incense_Burner_with_Openwork_Design_%28National_Treasure_No._95%29.jpg',
+        desc: '비취색 영롱한 빛깔의 고려청자 투각칠보문향로와 넉넉하고 순백의 미학을 자랑하는 조선 백자 달항아리가 있는 한국 도예 예술의 정점입니다.'
+      },
+      {
+        id: 'spot_7',
+        name: '디지털 실감 영상관',
+        category: '미디어아트 체험',
+        location: '상설전시관 1층 중·근세관 인근',
+        thumb: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=800&auto=format&fit=crop&q=80',
+        desc: '조선시대 파노라마 풍속화와 금강산 산수를 360도 초대형 스크린으로 생생하게 복원한 첨단 미디어아트 체험 전시실입니다.'
+      },
+      {
+        id: 'spot_8',
+        name: '미르폭포 & 석조정원',
+        category: '야외 숲길 산책로',
+        location: '박물관 북서측 야외 산책로',
+        thumb: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&auto=format&fit=crop&q=80',
+        desc: '용산(龍山)의 옛 순우리말 미르에서 유래한 숲속 인공 폭포와 시원한 계곡. 통일신라·고려 석탑과 부도가 숲길을 따라 늘어서 있어 산림욕을 선사합니다.'
+      }
     ];
 
     let currentUserId = 1;
+    let targetSpotId = null;
 
-    // Local Storage Helpers
-    function getStoredMembers() {
-      const saved = localStorage.getItem('cheonggye_team_members');
+    // Load / Save Local Storage
+    function getStoredData() {
+      const saved = localStorage.getItem('nmk_team_state_v3');
       if (saved) {
         try { return JSON.parse(saved); } catch(e){}
       }
-      return defaultMembers;
+      // Initial default status
+      const initial = {};
+      fixedTeamMembers.forEach(m => {
+        initial[m.id] = {
+          attended: false,
+          attendTime: null,
+          checks: [],
+          lastSpot: '집결 대기 중',
+          lastMsg: '09:30 국립중앙박물관 집결 대기 중입니다.',
+          lastTime: '대기 중'
+        };
+      });
+      return initial;
     }
 
-    function saveMembers(data) {
-      localStorage.setItem('cheonggye_team_members', JSON.stringify(data));
+    function saveStoredData(data) {
+      localStorage.setItem('nmk_team_state_v3', JSON.stringify(data));
       renderAll();
     }
 
     function resetData() {
-      if (!confirm("모든 팀원의 위치를 초기 시연 데이터로 되돌리시겠습니까?")) return;
-      localStorage.removeItem('cheonggye_team_members');
+      if (!confirm("모든 출석 및 미션 기록을 초기화하시겠습니까?")) return;
+      localStorage.removeItem('nmk_team_state_v3');
       renderAll();
     }
 
-    // Current User Handling
-    function populateUserSelect() {
-      const select = document.getElementById('currentUserSelect');
+    // Populate User Dropdown
+    function initUserDropdown() {
+      const select = document.getElementById('userSelect');
       select.innerHTML = '';
-      const members = getStoredMembers();
-      members.forEach(m => {
+      fixedTeamMembers.forEach(m => {
         const opt = document.createElement('option');
         opt.value = m.id;
         opt.textContent = `${m.name} (${m.role})`;
         if (m.id === currentUserId) opt.selected = true;
         select.appendChild(opt);
       });
-      updateCurrentUserNameUI();
     }
 
-    function changeCurrentUser(id) {
-      currentUserId = parseInt(id);
-      updateCurrentUserNameUI();
-      renderTeamCards();
+    function onUserSelectChange(val) {
+      currentUserId = parseInt(val);
+      renderAll();
     }
 
-    function updateCurrentUserNameUI() {
-      const members = getStoredMembers();
-      const me = members.find(m => m.id === currentUserId) || members[0];
-      document.getElementById('myNameSpan').textContent = me.name;
-    }
+    // Render 8 Mission Spots
+    function renderSpots() {
+      const container = document.getElementById('spotsGrid');
+      container.innerHTML = '';
+      const stateData = getStoredData();
+      const myState = stateData[currentUserId] || { attended: false, checks: [] };
 
-    // Render Map Route Nodes
-    function renderMapRoute() {
-      const container = document.getElementById('courseRouteContainer');
-      const members = getStoredMembers();
-      
-      // Keep the route line
-      container.innerHTML = '<div class="route-line"></div>';
+      museumMissions.forEach(spot => {
+        const isDone = (myState.checks || []).includes(spot.id);
+        const card = document.createElement('div');
+        card.className = `spot-card ${isDone ? 'completed' : ''}`;
 
-      checkpoints.forEach(cp => {
-        const node = document.createElement('div');
-        node.className = 'checkpoint-node';
-        node.onclick = () => openSpotDetailModal(cp.id);
-
-        // Find members at this spot
-        const hereMembers = members.filter(m => m.spotId === cp.id);
-        let bubblesHtml = '';
-        if (hereMembers.length > 0) {
-          bubblesHtml = '<div class="node-members-floating">';
-          hereMembers.forEach(m => {
-            const isFeasting = cp.id === 'spot_8';
-            bubblesHtml += `<div class="member-bubble ${isFeasting ? 'feasting' : ''}">
-              <i class="fa-solid fa-user"></i> ${m.name.split(' ')[0]}
-            </div>`;
-          });
-          bubblesHtml += '</div>';
-        }
-
-        const isFeastingNode = cp.id === 'spot_8';
-        node.innerHTML = `
-          ${bubblesHtml}
-          <div class="node-pin ${isFeastingNode ? 'special-feasting' : ''}">${cp.icon}</div>
-          <div class="node-name">${cp.name}</div>
-          <div class="node-alt">${cp.alt}</div>
+        card.innerHTML = `
+          <div class="spot-thumb-wrap" onclick="openLightbox('${spot.thumb}', '${spot.name} - ${spot.category}')">
+            <img src="${spot.thumb}" alt="${spot.name}" class="spot-thumb" loading="lazy">
+            <span class="spot-badge">${spot.location}</span>
+            <div class="stamp-overlay">
+              <span><i class="fa-solid fa-stamp"></i> 관람 완료</span>
+            </div>
+          </div>
+          <div class="spot-body">
+            <div>
+              <div class="spot-cat"><i class="fa-solid fa-bookmark"></i> ${spot.category}</div>
+              <h3 class="spot-name">${spot.name}</h3>
+              <p class="spot-desc">${spot.desc}</p>
+            </div>
+            <button class="btn-spot-action" onclick="openMissionModal('${spot.id}')">
+              ${isDone ? '<i class="fa-solid fa-check-double"></i> 관람 완료됨 (재기록)' : '<i class="fa-solid fa-lock"></i> 사번 인증 후 체크인'}
+            </button>
+          </div>
         `;
-        container.appendChild(node);
+        container.appendChild(card);
       });
     }
 
-    // Render Team Member Cards
-    function renderTeamCards() {
-      const container = document.getElementById('teamCardsContainer');
+    // Render 9 Team Members Live Radar
+    function renderTeamDashboard() {
+      const container = document.getElementById('teamCards');
       container.innerHTML = '';
-      const members = getStoredMembers();
+      const stateData = getStoredData();
 
-      members.forEach(m => {
-        const spot = checkpoints.find(c => c.id === m.spotId) || checkpoints[0];
+      let attendedCount = 0;
+      let allFinishedCount = 0;
+
+      fixedTeamMembers.forEach(m => {
         const isMe = m.id === currentUserId;
-        const isFeasting = m.spotId === 'spot_8';
+        const s = stateData[m.id] || { attended: false, checks: [] };
+        const doneMissions = s.checks || [];
+        const isAllDone = doneMissions.length >= museumMissions.length;
+
+        if (s.attended) attendedCount++;
+        if (s.attended && isAllDone) allFinishedCount++;
 
         const card = document.createElement('div');
         card.className = `member-card ${isMe ? 'is-me' : ''}`;
+
         card.innerHTML = `
           <div>
-            <div class="card-top">
-              <div class="member-avatar-wrap">
-                <div class="member-avatar">${m.name.substring(0,2)}</div>
-                <div class="member-info">
-                  <h4>${m.name} ${isMe ? '<span style="color:var(--forest-primary); font-weight:800;">(나)</span>' : ''}</h4>
+            <div class="member-top">
+              <div class="member-info-left">
+                <div class="member-avatar">${m.name.substring(0, 2)}</div>
+                <div class="member-name">
+                  <h4>${m.name} ${isMe ? '<span style="color:var(--celadon); font-size:0.8rem;">(나)</span>' : ''}</h4>
                   <span>${m.role}</span>
                 </div>
               </div>
-              <div class="member-location-pill ${isFeasting ? 'at-feasting' : ''}">
-                ${spot.icon} ${spot.name}
-              </div>
+              <span class="member-badge-count ${isAllDone ? 'all-done' : ''}">
+                ${isAllDone ? '🏅 8/8 완주' : `${doneMissions.length}/8 완료`}
+              </span>
             </div>
-            <div class="card-msg">
-              "${m.comment || '열심히 산을 오르는 중입니다!'}"
+
+            <div>
+              <span class="member-status-pill ${s.attended ? 'pill-arrived' : 'pill-waiting'}">
+                <i class="fa-solid ${s.attended ? 'fa-check' : 'fa-hourglass-half'}"></i> 
+                ${s.attended ? `09:30 집결 출석 (${s.attendTime || ''})` : '집결 미출석'}
+              </span>
+            </div>
+
+            <div class="member-recent-msg">
+              <strong>${s.lastSpot}:</strong> "${s.lastMsg}"
             </div>
           </div>
-          <div class="card-time">
-            <i class="fa-regular fa-clock"></i> 도착 기록: ${m.time || '기록 없음'}
+
+          <div class="member-time-meta">
+            <span><i class="fa-solid fa-clock-rotate-left"></i> 최근 기록: ${s.lastTime}</span>
+            <span>달성률 ${Math.round((doneMissions.length / museumMissions.length) * 100)}%</span>
           </div>
         `;
         container.appendChild(card);
       });
 
-      // Update counters
-      const summitCount = members.filter(m => m.spotId === 'spot_7' || m.spotId === 'spot_8').length;
-      const feastingCount = members.filter(m => m.spotId === 'spot_8').length;
-      document.getElementById('summitCountText').textContent = `${summitCount}명 정복 완료`;
-      document.getElementById('feastingCountText').textContent = `${feastingCount}명 도착 완료`;
-      document.getElementById('feastingBigNumber').textContent = `${feastingCount} / 9`;
+      // Update Attendance Gate
+      document.getElementById('attnDoneCountText').textContent = `${attendedCount} / 9명 출석`;
+      const meState = stateData[currentUserId] || {};
+      const btnAttn = document.getElementById('btnHeaderAttn');
+      const btnAttnLabel = document.getElementById('btnAttnLabel');
+      if (meState.attended) {
+        btnAttn.className = 'btn-attn done';
+        btnAttnLabel.textContent = `출석 완료 (${meState.attendTime})`;
+      } else {
+        btnAttn.className = 'btn-attn';
+        btnAttnLabel.textContent = `09:30 출석 체크하기`;
+      }
+
+      // Update My status bar
+      const meObj = fixedTeamMembers.find(m => m.id === currentUserId);
+      document.getElementById('myProfileName').textContent = meObj.name;
+      const myChecks = meState.checks || [];
+      document.getElementById('myMissionProgress').textContent = `${myChecks.length}/8 미션 완주 (${Math.round((myChecks.length/8)*100)}%)`;
+
+      const myAttnBadge = document.getElementById('myAttnBadge');
+      if (meState.attended) {
+        myAttnBadge.className = 'member-status-pill pill-arrived';
+        myAttnBadge.textContent = `09:30 출석 완료 (${meState.attendTime})`;
+      } else {
+        myAttnBadge.className = 'member-status-pill pill-waiting';
+        myAttnBadge.textContent = '출석 미완료';
+      }
+
+      // Update Final Restaurant Gate
+      updateRestaurantGate(allFinishedCount, fixedTeamMembers.length);
     }
 
-    // Checkin Modal Logic
-    function openCheckinModal() {
-      const members = getStoredMembers();
-      const me = members.find(m => m.id === currentUserId);
-      document.getElementById('modalUserName').textContent = me.name;
+    // Restaurant Unlock Logic
+    function updateRestaurantGate(finishedCount, totalTeam) {
+      const gateCard = document.getElementById('restaurantGateCard');
+      const gateIcon = document.getElementById('restGateIcon');
+      const gateTitle = document.getElementById('restGateTitle');
+      const gateSub = document.getElementById('restGateSub');
+      const restGateCountText = document.getElementById('restGateCountText');
+      const restArrivedCount = document.getElementById('restArrivedCount');
 
-      const select = document.getElementById('selectSpot');
-      select.innerHTML = '';
-      checkpoints.forEach(cp => {
-        const opt = document.createElement('option');
-        opt.value = cp.id;
-        opt.textContent = `${cp.icon} ${cp.name} (${cp.alt})`;
-        if (cp.id === me.spotId) opt.selected = true;
-        select.appendChild(opt);
-      });
+      restGateCountText.textContent = `${finishedCount} / ${totalTeam}명 완주`;
+      restArrivedCount.textContent = `${finishedCount} / ${totalTeam}명`;
 
-      document.getElementById('inputComment').value = me.comment || '';
-      document.getElementById('checkinModal').style.display = 'flex';
+      if (finishedCount === totalTeam) {
+        gateCard.className = 'gate-card unlocked';
+        gateIcon.innerHTML = '<i class="fa-solid fa-champagne-glasses"></i>';
+        gateTitle.innerHTML = '🎉 9명 전원 집결 &amp; 8대 명소 관람 완료! 거울못 식당 입장 승인 🔓';
+        gateSub.innerHTML = '모든 팀원이 미션을 완벽히 완주했습니다! 지금 즉시 <strong>야외 거울못 식당</strong>으로 집결하세요!';
+      } else {
+        gateCard.className = 'gate-card locked';
+        gateIcon.innerHTML = '<i class="fa-solid fa-lock"></i>';
+        gateTitle.innerHTML = `거울못 식당 회식 이동: 관람 진행 중 (${finishedCount}/${totalTeam}명 완료)`;
+        gateSub.innerHTML = `9명 전원 집결 출석 및 8개 미션 명소를 100% 관람 완료해야 거울못 식당으로 이동할 수 있습니다. (잔여 ${totalTeam - finishedCount}명)`;
+      }
     }
 
-    function submitCheckin() {
-      const spotId = document.getElementById('selectSpot').value;
-      const comment = document.getElementById('inputComment').value.trim();
-      
+    // Modal Operations
+    function openAttendanceModal() {
+      const me = fixedTeamMembers.find(m => m.id === currentUserId);
+      document.getElementById('modalAttnUserName').textContent = me.name;
+      document.getElementById('inputAttnEmpId').value = '';
+      document.getElementById('attendanceModal').style.display = 'flex';
+    }
+
+    function submitAttendance() {
+      const me = fixedTeamMembers.find(m => m.id === currentUserId);
+      const inputEmp = document.getElementById('inputAttnEmpId').value.trim();
+
+      if (!inputEmp) {
+        alert("사번 6자리를 입력해주세요.");
+        return;
+      }
+      if (inputEmp !== me.empId) {
+        alert("⚠️ 사번이 일치하지 않습니다. 본인의 사번을 정확히 입력해주세요.");
+        return;
+      }
+
       const now = new Date();
       const timeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
 
-      const members = getStoredMembers();
-      const me = members.find(m => m.id === currentUserId);
-      if (me) {
-        me.spotId = spotId;
-        me.comment = comment || '지점 통과 인증!';
-        me.time = timeStr;
-      }
+      const stateData = getStoredData();
+      stateData[currentUserId].attended = true;
+      stateData[currentUserId].attendTime = timeStr;
+      stateData[currentUserId].lastSpot = '09:30 집결 출석 완료';
+      stateData[currentUserId].lastMsg = '국립중앙박물관에 도착하여 출석을 완료했습니다!';
+      stateData[currentUserId].lastTime = timeStr;
 
-      saveMembers(members);
-      closeModal('checkinModal');
-      alert(`[${me.name}]님의 위치가 [${checkpoints.find(c=>c.id===spotId).name}]으로 성공적으로 업데이트되었습니다!`);
+      saveStoredData(stateData);
+      closeModal('attendanceModal');
+      alert(`✅ [${me.name}]님, 09:30 집결 출석이 정상적으로 확인되었습니다! 이제 8대 명소 미션을 시작해주세요.`);
     }
 
-    // Spot Detail Modal Logic
-    function openSpotDetailModal(spotId) {
-      const cp = checkpoints.find(c => c.id === spotId);
-      const members = getStoredMembers();
-      const hereMembers = members.filter(m => m.spotId === spotId);
+    function openMissionModal(spotId) {
+      const stateData = getStoredData();
+      const myState = stateData[currentUserId] || {};
 
-      document.getElementById('spotDetailTitle').textContent = `${cp.icon} ${cp.name}`;
-      document.getElementById('spotDetailAlt').textContent = cp.alt;
-      document.getElementById('spotDetailDesc').textContent = cp.desc;
-
-      const membersWrap = document.getElementById('spotDetailMembers');
-      membersWrap.innerHTML = '';
-      if (hereMembers.length === 0) {
-        membersWrap.innerHTML = '<span style="color:#a0aec0; font-size:0.85rem;">현재 이 지점에 있는 팀원이 없습니다.</span>';
-      } else {
-        hereMembers.forEach(m => {
-          membersWrap.innerHTML += `
-            <div style="background:var(--forest-light); color:var(--forest-dark); padding:0.3rem 0.6rem; border-radius:6px; font-size:0.82rem; font-weight:700;">
-              <i class="fa-solid fa-person-walking"></i> ${m.name} (${m.time})
-            </div>
-          `;
-        });
+      if (!myState.attended) {
+        alert("⚠️ 아직 09:30 집결 출석을 하지 않았습니다!\n상단의 [09:30 출석 체크하기]를 먼저 완료한 후 미션을 진행해주세요.");
+        return;
       }
 
-      document.getElementById('spotDetailModal').style.display = 'flex';
+      targetSpotId = spotId;
+      const spot = museumMissions.find(s => s.id === spotId);
+      document.getElementById('modalMissionSpotName').textContent = spot.name;
+      document.getElementById('inputMissionEmpId').value = '';
+      document.getElementById('modalMissionComment').value = '';
+      document.getElementById('missionModal').style.display = 'flex';
     }
 
-    // Demo Simulation function (Randomly advance some members)
-    function simulateProgression() {
-      const members = getStoredMembers();
-      members.forEach(m => {
-        const currentIdx = checkpoints.findIndex(c => c.id === m.spotId);
-        if (currentIdx < checkpoints.length - 1 && Math.random() > 0.4) {
-          m.spotId = checkpoints[currentIdx + 1].id;
-          const now = new Date();
-          m.time = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
-          if (m.spotId === 'spot_8') {
-            m.comment = '청계산장 도착! 숯불 등심 굽기 시작합니다!';
-          } else if (m.spotId === 'spot_7') {
-            m.comment = '매봉 정상 정복!! 야호!';
-          }
-        }
+    function submitMissionCheckin() {
+      if (!targetSpotId) return;
+      const me = fixedTeamMembers.find(m => m.id === currentUserId);
+      const inputEmp = document.getElementById('inputMissionEmpId').value.trim();
+      const comment = document.getElementById('modalMissionComment').value.trim();
+      const spot = museumMissions.find(s => s.id === targetSpotId);
+
+      if (!inputEmp) {
+        alert("사번 6자리를 입력해주세요.");
+        return;
+      }
+      if (inputEmp !== me.empId) {
+        alert("⚠️ 사번이 일치하지 않습니다. 본인의 사번을 정확히 입력해주세요.");
+        return;
+      }
+
+      const now = new Date();
+      const timeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+
+      const stateData = getStoredData();
+      if (!stateData[currentUserId].checks.includes(targetSpotId)) {
+        stateData[currentUserId].checks.push(targetSpotId);
+      }
+      stateData[currentUserId].lastSpot = spot.name;
+      stateData[currentUserId].lastMsg = comment || `${spot.name} 관람 완료!`;
+      stateData[currentUserId].lastTime = timeStr;
+
+      saveStoredData(stateData);
+      closeModal('missionModal');
+      alert(`🎯 [${spot.name}] 관람 스탬프가 성공적으로 인증 및 등록되었습니다! (${timeStr})`);
+    }
+
+    // Demo: Simulation
+    function simulateAllFinish() {
+      const stateData = getStoredData();
+      const allSpotIds = museumMissions.map(s => s.id);
+      fixedTeamMembers.forEach(m => {
+        stateData[m.id].attended = true;
+        stateData[m.id].attendTime = '09:28:10';
+        stateData[m.id].checks = [...allSpotIds];
+        stateData[m.id].lastSpot = '미르폭포 & 석조정원';
+        stateData[m.id].lastMsg = '8개 명소 관람 완료! 거울못 식당으로 이동합니다!';
+        stateData[m.id].lastTime = '11:45:00';
       });
-      saveMembers(members);
+      saveStoredData(stateData);
+      alert("🎉 9명 전원 집결 출석 및 8대 명소 100% 관람 완료! 거울못 식당 회식 입장이 잠금 해제되었습니다!");
     }
 
+    // Modal & Lightbox Helpers
     function closeModal(id) {
       document.getElementById(id).style.display = 'none';
     }
 
-    // Live Clock
-    function startClock() {
-      const clockEl = document.getElementById('currentLiveClock');
-      function tick() {
-        const now = new Date();
-        clockEl.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
-      }
-      tick();
-      setInterval(tick, 1000);
+    function openLightbox(src, caption) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxCaption').textContent = caption || '';
+      document.getElementById('lightboxModal').style.display = 'flex';
     }
 
     function renderAll() {
-      populateUserSelect();
-      renderMapRoute();
-      renderTeamCards();
+      initUserDropdown();
+      renderSpots();
+      renderTeamDashboard();
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       renderAll();
-      startClock();
     });
   </script>
 </body>
