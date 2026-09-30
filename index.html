@@ -35,6 +35,8 @@
       padding-bottom: 70px;
     }
 
+    .font-serif { font-family: 'Noto Serif KR', serif; }
+
     /* Top Sticky Header */
     header {
       position: sticky;
@@ -105,7 +107,7 @@
       text-align: center;
       color: #fff;
       background: linear-gradient(180deg, rgba(19, 51, 44, 0.65) 0%, rgba(19, 51, 44, 0.9) 100%),
-                  url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/National_Museum_of_Korea_20220614_001.jpg/1280px-National_Museum_of_Korea_20220614_001.jpg') center/cover no-repeat;
+                  url('https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_01.jpg') center/cover no-repeat;
     }
     .hero-content {
       max-width: 900px;
@@ -138,7 +140,7 @@
       margin: 0 auto;
     }
 
-    /* Dual Gate Status Bars (Attendance & Restaurant Gate) */
+    /* Gates Layout */
     .gates-section {
       max-width: 1100px;
       margin: -2.2rem auto 2.5rem;
@@ -243,7 +245,7 @@
       padding: 0 1rem;
     }
 
-    /* My Status Quick Action Bar */
+    /* My Action Bar */
     .my-action-bar {
       background: #fff;
       border-radius: var(--radius);
@@ -707,7 +709,7 @@
         <button onclick="simulateAllFinish()" style="background:#4A5568; color:#fff; border:none; padding:0.6rem 1.1rem; border-radius:8px; font-size:0.82rem; font-weight:800; cursor:pointer;">
           <i class="fa-solid fa-wand-magic-sparkles"></i> 전원 완주 시뮬레이션 (데모)
         </button>
-        <button onclick="resetData()" style="background:#EDF2F7; color:#64748B; border:none; padding:0.6rem 0.9rem; border-radius:8px; font-size:0.82rem; font-weight:700; cursor:pointer;">
+        <button onclick="openResetModal()" style="background:#EDF2F7; color:#64748B; border:none; padding:0.6rem 0.9rem; border-radius:8px; font-size:0.82rem; font-weight:700; cursor:pointer;">
           <i class="fa-solid fa-rotate-right"></i> 초기화
         </button>
       </div>
@@ -814,6 +816,29 @@
     </div>
   </div>
 
+  <!-- Reset Passcode Verification Modal -->
+  <div class="modal-overlay" id="resetModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('resetModal')">&times;</button>
+      <h3 style="color:var(--terracotta); font-size:1.25rem; margin-bottom:0.4rem;">
+        ⚠️ 데이터 전체 초기화 보안 검증
+      </h3>
+      <p style="font-size:0.85rem; color:#64748B; margin-bottom:1.2rem;">
+        팀 야유회 전체 데이터를 리셋하려면 관리자 비밀번호를 입력해주세요.
+      </p>
+
+      <div class="form-group">
+        <label>초기화 비밀번호</label>
+        <input type="password" id="inputResetPassword" placeholder="비밀번호 4자리" maxlength="4" autocomplete="off">
+        <div class="security-note"><i class="fa-solid fa-lock"></i> 마스터 비밀번호 "1234"가 필요합니다.</div>
+      </div>
+
+      <button onclick="submitReset()" style="width:100%; background:var(--terracotta); color:#fff; border:none; padding:0.85rem; border-radius:8px; font-weight:800; font-size:0.95rem; cursor:pointer;">
+        보안 초기화 실행
+      </button>
+    </div>
+  </div>
+
   <!-- Lightbox Modal -->
   <div class="modal-overlay" id="lightboxModal" onclick="closeModal('lightboxModal')">
     <div style="text-align: center;">
@@ -842,14 +867,14 @@
       { id: 9, name: '박형배', empId: '113633', role: '팀원' }
     ];
 
-    // 2. National Museum of Korea 8 Checkpoint Missions
+    // 2. National Museum of Korea 8 Checkpoint Missions (Connected to Official museum.go.kr Domain)
     const museumMissions = [
       {
         id: 'spot_1',
         name: '거울못 & 청자정',
         category: '야외 전통정원',
         location: '박물관 정문 앞 호수',
-        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/National_Museum_of_Korea_20220614_001.jpg/1280px-National_Museum_of_Korea_20220614_001.jpg',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_03.jpg',
         desc: '박물관 전면에 위치한 드넓은 전통 연못 정원. 호수 물결에 비치는 박물관 건축과 청자기와를 얹은 우아한 청자정의 반영을 감상합니다.'
       },
       {
@@ -857,7 +882,7 @@
         name: '열린마당 (남산타워 뷰)',
         category: '건축 & 포토존',
         location: '박물관 메인 중정',
-        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/National_Museum_of_Korea_20220614_005.jpg/1280px-National_Museum_of_Korea_20220614_005.jpg',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_01.jpg',
         desc: '동관과 서관 사이 거대한 열린 구조물 사이로 N서울타워와 남산 풍경이 액자처럼 담기는 대한민국 최고의 건축 뷰포인트. 단체 인증샷 명소!'
       },
       {
@@ -865,15 +890,15 @@
         name: '경천사지 십층석탑',
         category: '국보 제86호',
         location: '상설전시관 1층 역사의 길',
-        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/National_Museum_of_Korea-Ten-story_Stone_Pagoda_from_Gyeongcheonsa_Temple_Site-01.jpg/800px-National_Museum_of_Korea-Ten-story_Stone_Pagoda_from_Gyeongcheonsa_Temple_Site-01.jpg',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_02.jpg',
         desc: '고려 후기(1348년) 대리석으로 제작된 13.5m 높이의 걸작 불탑. 전통 목조건축 양식과 서유기 설화가 섬세하게 조각되어 로비 천장을 뚫을 듯 장엄합니다.'
       },
       {
         id: 'spot_4',
-        name: '신라 금관 & 금허리띠',
+        name: '신라 금관 & 금제 허리띠',
         category: '국보 제191호',
         location: '1층 선사·고대관 신라실',
-        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gold_Crown_from_the_North_Mound_of_Hwangnamdaechong_Tomb.jpg/800px-Gold_Crown_from_the_North_Mound_of_Hwangnamdaechong_Tomb.jpg',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_04.jpg',
         desc: '황남대총 북분에서 출토된 황금의 나라 신라의 정수. 사슴뿔과 나뭇가지 형태의 세움식 장식과 영롱한 비취 옥이 화려함의 극치를 보여줍니다.'
       },
       {
@@ -881,7 +906,7 @@
         name: '사유의 방 (반가사유상)',
         category: '국보 78호 & 83호',
         location: '상설전시관 2층 전용관',
-        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Gilt-bronze_Maitreya_in_Meditation_%28National_Treasure_No._83%29.jpg/800px-Gilt-bronze_Maitreya_in_Meditation_%28National_Treasure_No._83%29.jpg',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_05.jpg',
         desc: '국보 반가사유상 두 점이 어둠 속 은은한 조명 아래 나란히 자리한 몰입형 사유 공간. 생로병사의 고뇌를 넘어선 깊은 미소가 큰 위로를 건넵니다.'
       },
       {
@@ -889,7 +914,7 @@
         name: '청자 투각향로 & 달항아리',
         category: '도자공예관 명품',
         location: '상설전시관 3층 조각·공예관',
-        thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Celadon_Incense_Burner_with_Openwork_Design_%28National_Treasure_No._95%29.jpg/800px-Celadon_Incense_Burner_with_Openwork_Design_%28National_Treasure_No._95%29.jpg',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_06.jpg',
         desc: '비취색 영롱한 빛깔의 고려청자 투각칠보문향로와 넉넉하고 순백의 미학을 자랑하는 조선 백자 달항아리가 있는 한국 도예 예술의 정점입니다.'
       },
       {
@@ -897,15 +922,15 @@
         name: '디지털 실감 영상관',
         category: '미디어아트 체험',
         location: '상설전시관 1층 중·근세관 인근',
-        thumb: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=800&auto=format&fit=crop&q=80',
-        desc: '조선시대 파노라마 풍속화와 금강산 산수를 360도 초대형 스크린으로 생생하게 복원한 첨단 미디어아트 체험 전시실입니다.'
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_07.jpg',
+        desc: '조선시대 파노라마 풍속화와 금강산 산수를 360도 초대형 파노라마 스크린으로 생생하게 복원한 첨단 미디어아트 체험 전시실입니다.'
       },
       {
         id: 'spot_8',
         name: '미르폭포 & 석조정원',
         category: '야외 숲길 산책로',
         location: '박물관 북서측 야외 산책로',
-        thumb: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&auto=format&fit=crop&q=80',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_08.jpg',
         desc: '용산(龍山)의 옛 순우리말 미르에서 유래한 숲속 인공 폭포와 시원한 계곡. 통일신라·고려 석탑과 부도가 숲길을 따라 늘어서 있어 산림욕을 선사합니다.'
       }
     ];
@@ -915,11 +940,10 @@
 
     // Load / Save Local Storage
     function getStoredData() {
-      const saved = localStorage.getItem('nmk_team_state_v3');
+      const saved = localStorage.getItem('nmk_team_state_v4');
       if (saved) {
         try { return JSON.parse(saved); } catch(e){}
       }
-      // Initial default status
       const initial = {};
       fixedTeamMembers.forEach(m => {
         initial[m.id] = {
@@ -935,14 +959,25 @@
     }
 
     function saveStoredData(data) {
-      localStorage.setItem('nmk_team_state_v3', JSON.stringify(data));
+      localStorage.setItem('nmk_team_state_v4', JSON.stringify(data));
       renderAll();
     }
 
-    function resetData() {
-      if (!confirm("모든 출석 및 미션 기록을 초기화하시겠습니까?")) return;
-      localStorage.removeItem('nmk_team_state_v3');
-      renderAll();
+    function openResetModal() {
+      document.getElementById('inputResetPassword').value = '';
+      document.getElementById('resetModal').style.display = 'flex';
+    }
+
+    function submitReset() {
+      const pw = document.getElementById('inputResetPassword').value;
+      if (pw === '1234') {
+        localStorage.removeItem('nmk_team_state_v4');
+        closeModal('resetModal');
+        renderAll();
+        alert('🔄 전체 야유회 참여 현황 및 미션 데이터가 안전하게 초기화되었습니다.');
+      } else {
+        alert('❌ 비밀번호가 올바르지 않습니다. 초기화 권한이 차단되었습니다.');
+      }
     }
 
     // Populate User Dropdown
