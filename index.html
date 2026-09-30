@@ -7,7 +7,7 @@
   <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Black+Han+Sans&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Black+Han+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -35,9 +35,7 @@
       padding-bottom: 70px;
     }
 
-    .font-serif { font-family: 'Noto Serif KR', serif; }
-
-    /* Top Sticky Header */
+    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -51,151 +49,57 @@
       align-items: center;
       box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
+    .brand { display: flex; align-items: center; gap: 0.7rem; }
     .brand-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--celadon);
-      color: #fff;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 10px rgba(31, 78, 67, 0.3);
+      width: 40px; height: 40px; background: var(--celadon); color: #fff;
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; box-shadow: 0 4px 10px rgba(31, 78, 67, 0.3);
     }
-    .brand-title {
-      font-weight: 900;
-      font-size: 1.15rem;
-      color: var(--celadon-dark);
-      letter-spacing: -0.02em;
-    }
-    .brand-sub {
-      font-size: 0.75rem;
-      color: #64748B;
-    }
+    .brand-title { font-weight: 900; font-size: 1.15rem; color: var(--celadon-dark); }
+    .brand-sub { font-size: 0.75rem; color: #64748B; }
 
-    .header-user-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
+    .header-user-wrap { display: flex; align-items: center; gap: 0.6rem; }
     .user-select-box {
-      padding: 0.45rem 0.85rem;
-      border-radius: 8px;
-      border: 2px solid var(--celadon);
-      font-size: 0.88rem;
-      font-weight: 800;
-      background: #fff;
-      color: var(--celadon-dark);
-      cursor: pointer;
+      padding: 0.45rem 0.85rem; border-radius: 8px; border: 2px solid var(--celadon);
+      font-size: 0.88rem; font-weight: 800; background: #fff; color: var(--celadon-dark); cursor: pointer;
     }
 
     /* Hero Banner */
     .hero {
-      position: relative;
-      height: 45vh;
-      min-height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      background: linear-gradient(180deg, rgba(19, 51, 44, 0.65) 0%, rgba(19, 51, 44, 0.9) 100%),
+      position: relative; height: 42vh; min-height: 320px;
+      display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+      background: linear-gradient(180deg, rgba(19, 51, 44, 0.65) 0%, rgba(19, 51, 44, 0.92) 100%),
                   url('https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_01.jpg') center/cover no-repeat;
     }
-    .hero-content {
-      max-width: 900px;
-      padding: 1.5rem;
-      z-index: 2;
-    }
+    .hero-content { max-width: 900px; padding: 1.5rem; z-index: 2; }
     .hero-badge {
-      display: inline-block;
-      background: rgba(197, 160, 89, 0.25);
-      border: 1px solid var(--gold);
-      color: var(--gold-light);
-      padding: 0.3rem 1.1rem;
-      border-radius: 30px;
-      font-size: 0.82rem;
-      font-weight: 800;
-      margin-bottom: 0.8rem;
-      letter-spacing: 0.05em;
+      display: inline-block; background: rgba(197, 160, 89, 0.25); border: 1px solid var(--gold);
+      color: var(--gold-light); padding: 0.3rem 1.1rem; border-radius: 30px; font-size: 0.82rem;
+      font-weight: 800; margin-bottom: 0.8rem;
     }
-    .hero-title {
-      font-family: 'Black Han Sans', sans-serif;
-      font-size: 2.6rem;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
-    .hero-desc {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.9);
-      max-width: 720px;
-      margin: 0 auto;
-    }
+    .hero-title { font-family: 'Black Han Sans', sans-serif; font-size: 2.5rem; margin-bottom: 0.5rem; text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+    .hero-desc { font-size: 0.98rem; color: rgba(255,255,255,0.9); max-width: 720px; margin: 0 auto; }
 
-    /* Gates Layout */
+    /* Dual Gate Status Bars */
     .gates-section {
-      max-width: 1100px;
-      margin: -2.2rem auto 2.5rem;
-      padding: 0 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      position: relative;
-      z-index: 10;
+      max-width: 1100px; margin: -2.2rem auto 2.2rem; padding: 0 1rem;
+      display: flex; flex-direction: column; gap: 1rem; position: relative; z-index: 10;
     }
-
     .gate-card {
-      background: #ffffff;
-      border-radius: var(--radius);
-      padding: 1.4rem 1.8rem;
-      box-shadow: var(--shadow);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      border: 2px solid var(--border);
-      transition: all 0.3s;
+      background: #ffffff; border-radius: var(--radius); padding: 1.4rem 1.8rem;
+      box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.2rem; border: 2px solid var(--border); transition: all 0.3s;
     }
-    .gate-card.attn-card {
-      border-color: #CBD5E1;
-      background: #FFFFFF;
-    }
-    .gate-card.locked {
-      border-color: #E2E8F0;
-      background: #FCFBF9;
-    }
-    .gate-card.unlocked {
-      border-color: #2E7D32;
-      background: #F1F8E9;
-      animation: pulseBorder 2s infinite;
-    }
+    .gate-card.attn-card { border-color: #CBD5E1; }
+    .gate-card.locked { border-color: #E2E8F0; background: #FCFBF9; }
+    .gate-card.unlocked { border-color: #2E7D32; background: #F1F8E9; animation: pulseBorder 2s infinite; }
     @keyframes pulseBorder {
       0%, 100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4); }
       50% { box-shadow: 0 0 0 12px rgba(46, 125, 50, 0); }
     }
-
-    .gate-left {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
+    .gate-left { display: flex; align-items: center; gap: 1.2rem; }
     .gate-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
+      width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.35rem;
     }
     .attn-card .gate-icon { background: #E0F2FE; color: #0284C7; }
     .locked .gate-icon { background: #FEEBC8; color: #C05621; }
@@ -203,430 +107,191 @@
 
     .gate-info h3 { font-size: 1.15rem; font-weight: 800; color: var(--charcoal); }
     .gate-info p { font-size: 0.85rem; color: #64748B; }
-
-    .gate-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .gate-number {
-      font-family: 'Black Han Sans', sans-serif;
-      font-size: 1.8rem;
-      color: var(--celadon-dark);
-      text-align: right;
-    }
-
     .btn-attn {
-      background: #0284C7;
-      color: #fff;
-      border: none;
-      padding: 0.65rem 1.2rem;
-      border-radius: 30px;
-      font-size: 0.88rem;
-      font-weight: 800;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.2s;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+      background: #0284C7; color: #fff; border: none; padding: 0.65rem 1.2rem;
+      border-radius: 30px; font-size: 0.88rem; font-weight: 800; cursor: pointer;
+      display: flex; align-items: center; gap: 0.4rem; transition: all 0.2s;
     }
-    .btn-attn:hover { background: #0369A1; transform: translateY(-1px); }
-    .btn-attn.done {
-      background: #10B981;
-      cursor: default;
-      box-shadow: none;
-    }
+    .btn-attn.done { background: #10B981; cursor: default; }
 
     /* Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
 
-    /* My Action Bar */
+    /* My Status Action Bar */
     .my-action-bar {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 1.3rem 1.6rem;
-      margin-bottom: 2.2rem;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+      background: #fff; border-radius: var(--radius); padding: 1.2rem 1.6rem;
+      margin-bottom: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
     }
-    .my-info-status h4 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--celadon-dark);
-    }
-    .my-info-status p {
-      font-size: 0.85rem;
-      color: #64748B;
-    }
+    .my-info-status h4 { font-size: 1.05rem; font-weight: 800; color: var(--celadon-dark); }
+    .my-info-status p { font-size: 0.84rem; color: #64748B; }
 
-    /* Section Headers */
+    /* Section Header */
     .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin: 2.8rem 0 1.2rem;
-      border-bottom: 2px solid #E2E8F0;
-      padding-bottom: 0.6rem;
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin: 2.5rem 0 1.2rem; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.6rem;
     }
     .section-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--celadon-dark);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 1.3rem; font-weight: 800; color: var(--celadon-dark);
+      display: flex; align-items: center; gap: 0.5rem;
     }
 
-    /* Checkpoint Card Grid */
-    .spots-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.4rem;
-      margin-bottom: 3.5rem;
+    /* Live Pick Statistics Board */
+    .stats-board {
+      background: #FFFFFF; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.6rem; margin-bottom: 2.5rem; box-shadow: var(--shadow);
     }
-    .spot-card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: transform 0.2s, border-color 0.2s;
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem;
     }
-    .spot-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--gold);
+    .stats-col h4 {
+      font-size: 1rem; font-weight: 800; color: var(--celadon-dark);
+      margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;
     }
-    .spot-card.completed {
-      border: 2px solid var(--celadon);
+    .stat-bar-item { margin-bottom: 0.85rem; }
+    .stat-label-wrap { display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .stat-track { height: 9px; background: #EEF2F6; border-radius: 6px; overflow: hidden; }
+    .stat-fill { height: 100%; border-radius: 6px; transition: width 0.4s ease; }
+    .fill-perm { background: var(--celadon); }
+    .fill-spec { background: var(--gold); }
+
+    /* Cards Grid */
+    .exhibit-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.4rem; margin-bottom: 2.8rem;
     }
-    .spot-thumb-wrap {
-      position: relative;
-      height: 170px;
-      overflow: hidden;
-      cursor: pointer;
+    .exhibit-card {
+      background: var(--card-bg); border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      display: flex; flex-direction: column; position: relative; transition: transform 0.2s, border-color 0.2s;
     }
-    .spot-thumb {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
+    .exhibit-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+    .exhibit-card.my-picked { border: 2.5px solid var(--celadon); background: #FAFDFB; }
+
+    .thumb-wrap { position: relative; height: 165px; overflow: hidden; cursor: pointer; }
+    .thumb-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .thumb-wrap:hover .thumb-img { transform: scale(1.08); }
+    .badge-floor {
+      position: absolute; top: 0.7rem; left: 0.7rem; background: rgba(19, 51, 44, 0.85);
+      color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;
     }
-    .spot-thumb-wrap:hover .spot-thumb { transform: scale(1.08); }
-    .spot-badge {
-      position: absolute;
-      top: 0.8rem;
-      left: 0.8rem;
-      background: rgba(19, 51, 44, 0.85);
-      color: #fff;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      backdrop-filter: blur(4px);
+    .badge-official-link {
+      position: absolute; top: 0.7rem; right: 0.7rem; background: rgba(255, 255, 255, 0.95);
+      color: var(--celadon-dark); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.72rem;
+      font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 0.3rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
+    .badge-official-link:hover { background: #fff; color: var(--terracotta); }
+
     .stamp-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(31, 78, 67, 0.85);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 1.15rem;
-      font-weight: 900;
-      letter-spacing: 0.05em;
+      position: absolute; inset: 0; background: rgba(31, 78, 67, 0.88);
+      display: none; align-items: center; justify-content: center; color: #fff;
+      font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em;
     }
-    .spot-card.completed .stamp-overlay { display: flex; }
+    .exhibit-card.my-picked .stamp-overlay { display: flex; }
 
-    .spot-body {
-      padding: 1.1rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      justify-content: space-between;
-    }
-    .spot-cat {
-      font-size: 0.76rem;
-      color: var(--gold);
-      font-weight: 800;
-      margin-bottom: 0.3rem;
-    }
-    .spot-name {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--charcoal);
-      margin-bottom: 0.4rem;
-    }
-    .spot-desc {
-      font-size: 0.84rem;
-      color: #4A5568;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+    .card-body { padding: 1.1rem; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
+    .card-title { font-size: 1.05rem; font-weight: 800; color: var(--charcoal); margin-bottom: 0.3rem; }
+    .card-sub { font-size: 0.76rem; color: var(--gold); font-weight: 800; margin-bottom: 0.5rem; }
+    .card-desc {
+      font-size: 0.82rem; color: #4A5568; line-height: 1.5; margin-bottom: 0.9rem;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
     }
 
-    .btn-spot-action {
-      background: var(--celadon);
-      color: #fff;
-      border: none;
-      padding: 0.65rem;
-      border-radius: 8px;
-      font-size: 0.84rem;
-      font-weight: 800;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      transition: background 0.2s;
+    .picked-members-list {
+      display: flex; flex-wrap: wrap; gap: 0.25rem; margin-bottom: 0.8rem; min-height: 24px;
     }
-    .btn-spot-action:hover { background: var(--celadon-dark); }
-    .spot-card.completed .btn-spot-action {
-      background: #EDF2F7;
-      color: #64748B;
+    .picker-tag {
+      background: var(--celadon-light); color: var(--celadon-dark);
+      font-size: 0.7rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px;
     }
 
-    /* 9 Team Members Status Dashboard Grid */
+    .btn-pick-action {
+      background: var(--celadon); color: #fff; border: none; padding: 0.65rem;
+      border-radius: 8px; font-size: 0.84rem; font-weight: 800; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem; transition: background 0.2s;
+    }
+    .btn-pick-action:hover { background: var(--celadon-dark); }
+    .exhibit-card.my-picked .btn-pick-action { background: #EDF2F7; color: #64748B; }
+
+    /* Team Members Radar */
     .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.3rem;
-      margin-bottom: 3.5rem;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.3rem; margin-bottom: 3.5rem;
     }
     .member-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.3rem;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.3rem; box-shadow: var(--shadow); display: flex; flex-direction: column;
+      justify-content: space-between; position: relative;
     }
-    .member-card.is-me {
-      border: 2px solid var(--celadon);
-      background: #FAFDFB;
-    }
-    .member-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.8rem;
-    }
-    .member-info-left {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
+    .member-card.is-me { border: 2px solid var(--celadon); background: #FAFDFB; }
+    .member-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+    .member-info-left { display: flex; align-items: center; gap: 0.65rem; }
     .member-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--celadon-light);
-      color: var(--celadon-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 0.95rem;
-      border: 2px solid #C2E0CF;
+      width: 44px; height: 44px; border-radius: 50%; background: var(--celadon-light);
+      color: var(--celadon-dark); display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.95rem; border: 2px solid #C2E0CF;
     }
     .member-name h4 { font-size: 1.02rem; font-weight: 800; }
     .member-name span { font-size: 0.74rem; color: #64748B; }
 
     .member-badge-count {
-      background: var(--gold-light);
-      color: #7B5E14;
-      font-size: 0.76rem;
-      font-weight: 800;
-      padding: 0.25rem 0.65rem;
-      border-radius: 20px;
+      background: var(--gold-light); color: #7B5E14; font-size: 0.76rem;
+      font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 20px;
     }
-    .member-badge-count.all-done {
-      background: #C6F6D5;
-      color: #22543D;
+    .member-badge-count.all-done { background: #C6F6D5; color: #22543D; }
+
+    .member-picks-box {
+      background: #F8FAFC; border-radius: 8px; padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;
+      font-size: 0.8rem; line-height: 1.5; border-left: 3px solid var(--celadon);
     }
 
-    .member-status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.75rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
-      margin-bottom: 0.6rem;
-      font-weight: 700;
-    }
-    .pill-arrived { background: #E0F2FE; color: #0284C7; }
-    .pill-waiting { background: #FEE2E2; color: #EF4444; }
-
-    .member-recent-msg {
-      background: #F8FAFC;
-      border-left: 3px solid var(--celadon);
-      padding: 0.6rem 0.8rem;
-      border-radius: 6px;
-      font-size: 0.84rem;
-      color: #334155;
-      margin-bottom: 0.6rem;
-    }
-    .member-time-meta {
-      font-size: 0.74rem;
-      color: #94A3B8;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    /* Final Destination Banner (Mirror Pond Restaurant) */
+    /* Final Destination */
     .restaurant-detail-banner {
       background: linear-gradient(135deg, #13332C 0%, #1F4E43 100%);
-      color: #fff;
-      border-radius: var(--radius);
-      padding: 2.2rem;
-      margin-bottom: 3.5rem;
-      box-shadow: 0 12px 30px rgba(19, 51, 44, 0.2);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 2rem;
+      color: #fff; border-radius: var(--radius); padding: 2.2rem; margin-bottom: 3.5rem;
+      box-shadow: 0 12px 30px rgba(19, 51, 44, 0.2); display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 2rem;
     }
     .rest-content { max-width: 620px; }
     .rest-tag {
-      background: var(--gold);
-      color: var(--charcoal);
-      font-size: 0.78rem;
-      font-weight: 800;
-      padding: 0.25rem 0.8rem;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 0.8rem;
+      background: var(--gold); color: var(--charcoal); font-size: 0.78rem; font-weight: 800;
+      padding: 0.25rem 0.8rem; border-radius: 20px; display: inline-block; margin-bottom: 0.8rem;
     }
-    .rest-content h2 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 0.6rem;
-    }
-    .rest-content p {
-      font-size: 0.94rem;
-      color: rgba(255,255,255,0.88);
-      line-height: 1.6;
-    }
-    .rest-links {
-      display: flex;
-      gap: 0.8rem;
-      margin-top: 1.2rem;
-    }
+    .rest-content h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.6rem; }
+    .rest-links { display: flex; gap: 0.8rem; margin-top: 1.2rem; }
     .btn-rest {
-      background: #fff;
-      color: var(--celadon-dark);
-      padding: 0.55rem 1.1rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      transition: transform 0.15s;
+      background: #fff; color: var(--celadon-dark); padding: 0.55rem 1.1rem; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 800; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none;
     }
-    .btn-rest:hover { transform: translateY(-2px); }
 
-    /* Modals & Passcode Verification */
+    /* Modals */
     .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      backdrop-filter: blur(5px);
-      z-index: 200;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
+      position: fixed; inset: 0; background: rgba(0,0,0,0.65); backdrop-filter: blur(5px);
+      z-index: 200; display: none; align-items: center; justify-content: center; padding: 1rem;
     }
     .modal-box {
-      background: #fff;
-      width: 100%;
-      max-width: 500px;
-      border-radius: var(--radius);
-      padding: 2rem;
-      position: relative;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      background: #fff; width: 100%; max-width: 500px; border-radius: var(--radius);
+      padding: 2rem; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     }
     .modal-close {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #94A3B8;
+      position: absolute; top: 1.2rem; right: 1.2rem; background: none; border: none;
+      font-size: 1.5rem; cursor: pointer; color: #94A3B8;
     }
     .form-group { margin-bottom: 1.2rem; }
-    .form-group label {
-      display: block;
-      font-size: 0.86rem;
-      font-weight: 800;
-      margin-bottom: 0.4rem;
-      color: var(--charcoal);
-    }
+    .form-group label { display: block; font-size: 0.86rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--charcoal); }
     .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 0.75rem 0.9rem;
-      border: 1px solid #CBD5E1;
-      border-radius: 8px;
-      font-family: inherit;
-      font-size: 0.92rem;
+      width: 100%; padding: 0.75rem 0.9rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: inherit; font-size: 0.92rem;
     }
-    .security-note {
-      font-size: 0.78rem;
-      color: #EF4444;
-      margin-top: 0.3rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
+    .security-note { font-size: 0.78rem; color: #EF4444; margin-top: 0.3rem; display: flex; align-items: center; gap: 0.3rem; }
 
-    /* Lightbox Modal */
-    #lightboxModal img {
-      max-width: 90vw;
-      max-height: 80vh;
-      border-radius: 10px;
-      box-shadow: 0 5px 30px rgba(0,0,0,0.5);
-    }
-
-    /* Footer */
-    footer {
-      background: #111827;
-      color: #9CA3AF;
-      text-align: center;
-      padding: 2.5rem 1rem;
-      font-size: 0.85rem;
-    }
-    footer strong { color: #fff; }
+    #lightboxModal img { max-width: 90vw; max-height: 80vh; border-radius: 10px; }
+    footer { background: #111827; color: #9CA3AF; text-align: center; padding: 2.5rem 1rem; font-size: 0.85rem; }
 
     @media (max-width: 768px) {
       .hero-title { font-size: 1.9rem; }
       .gate-card { flex-direction: column; align-items: stretch; text-align: center; }
       .gate-left { flex-direction: column; }
-      .gate-right { justify-content: center; }
     }
   </style>
 </head>
@@ -638,122 +303,150 @@
       <div class="brand-icon"><i class="fa-solid fa-landmark"></i></div>
       <div>
         <div class="brand-title">국립중앙박물관 문화 야유회</div>
-        <div class="brand-sub">09:30 집결 출석 &amp; 8대 명소 완주 후 거울못 식당</div>
+        <div class="brand-sub">7대 상설전시 &amp; 5대 특별전시 Pick &amp; 통계 트래커</div>
       </div>
     </div>
     <div class="header-user-wrap">
       <label for="userSelect" style="font-size:0.84rem; font-weight:800; color:var(--celadon-dark);">내 프로필:</label>
-      <select id="userSelect" class="user-select-box" onchange="onUserSelectChange(this.value)">
-        <!-- Injected by JS -->
-      </select>
+      <select id="userSelect" class="user-select-box" onchange="onUserSelectChange(this.value)"></select>
     </div>
   </header>
 
   <!-- Hero Banner -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">🏛️ 2026 부품기술연구팀 야유회</div>
-      <h1 class="hero-title">국립중앙박물관 9인 명작 탐방</h1>
+      <div class="hero-badge">🏛️ 2026 부품기술연구팀 문화 야유회</div>
+      <h1 class="hero-title">국립중앙박물관 전시 Pick &amp; 통계</h1>
       <p class="hero-desc">
-        오전 09:30 집결 출석 체크 완료 후 8대 명소 스탬프 투어를 시작합니다. 9명 전원이 100% 관람을 완료해야 최종 '거울못 식당' 회식 장소로 이동할 수 있습니다!
+        오전 09:30 집결 후 7개의 상설전시관과 5건의 특별전시 중 가장 인상에 남는 전시를 각자 하나씩 Pick하여 관람합니다. 9명 전원 완주 시 최종 '거울못 식당' 회식으로 이동합니다!
       </p>
     </div>
   </section>
 
-  <!-- Dual Status Gates Section -->
+  <!-- Gates Section -->
   <div class="gates-section">
-    <!-- Gate 1: 09:30 Attendance Gate -->
+    <!-- 09:30 Attendance Gate -->
     <div class="gate-card attn-card">
       <div class="gate-left">
         <div class="gate-icon"><i class="fa-solid fa-user-check"></i></div>
         <div class="gate-info">
           <h3>09:30 집결 참여 현황 (<span id="attnDoneCountText">0 / 9명 출석</span>)</h3>
-          <p id="attnStatusSub">박물관 입구에 도착한 팀원은 본인 인증(사번 입력)을 통해 출석을 완료해주세요.</p>
+          <p id="attnStatusSub">박물관 입구에 도착한 팀원은 사번 6자리를 입력하여 출석을 완료해주세요.</p>
         </div>
       </div>
-      <div class="gate-right">
+      <div>
         <button class="btn-attn" id="btnHeaderAttn" onclick="openAttendanceModal()">
           <i class="fa-solid fa-fingerprint"></i> <span id="btnAttnLabel">09:30 출석 체크하기</span>
         </button>
       </div>
     </div>
 
-    <!-- Gate 2: Final Restaurant Gate (Locked / Unlocked) -->
+    <!-- Final Restaurant Unlock Gate -->
     <div class="gate-card locked" id="restaurantGateCard">
       <div class="gate-left">
         <div class="gate-icon" id="restGateIcon"><i class="fa-solid fa-lock"></i></div>
         <div class="gate-info">
           <h3 id="restGateTitle">거울못 식당 회식 이동: 관람 진행 중 (입장 잠김 🔒)</h3>
-          <p id="restGateSub">9명 전원 집결 출석 및 8개 미션 명소를 100% 관람 완료해야 식당으로 이동할 수 있습니다.</p>
+          <p id="restGateSub">9명 전원 출석 및 상설/특별전시 Pick 관람을 모두 완료해야 식당으로 이동할 수 있습니다.</p>
         </div>
       </div>
-      <div class="gate-right">
-        <div class="gate-number" id="restGateCountText">0 / 9명 완주</div>
+      <div>
+        <div style="font-family:'Black Han Sans', sans-serif; font-size:1.8rem; color:var(--celadon-dark);" id="restGateCountText">0 / 9명 완주</div>
       </div>
     </div>
   </div>
 
   <div class="container">
 
-    <!-- My Quick Status Bar -->
+    <!-- My Quick Status & Controls -->
     <div class="my-action-bar">
       <div class="my-info-status">
         <h4>
           👤 <span id="myProfileName" style="color:var(--celadon); font-size:1.15rem;">김성우</span>님의 상태: 
-          <span id="myAttnBadge" class="member-status-pill pill-waiting">출석 대기</span>
-          <span id="myMissionProgress" style="font-size:0.9rem; font-weight:800; color:var(--terracotta); margin-left:0.5rem;">0/8 미션 완주</span>
+          <span id="myAttnBadge" style="font-size:0.75rem; padding:0.2rem 0.55rem; border-radius:6px; font-weight:700; background:#FEE2E2; color:#EF4444;">출석 대기</span>
+          <span id="myPickProgress" style="font-size:0.9rem; font-weight:800; color:var(--terracotta); margin-left:0.5rem;">미션 진행 중</span>
         </h4>
-        <p>각 미션 지점 방문 시 사번 6자리를 입력하여 체크인하면 시각과 현장 소감이 실시간 공유됩니다.</p>
+        <p>상설전시와 특별전시에서 각 1개씩 마음에 드는 전시를 Pick하여 사번 인증 후 관람을 완료하세요.</p>
       </div>
       <div style="display:flex; gap:0.6rem;">
         <button onclick="simulateAllFinish()" style="background:#4A5568; color:#fff; border:none; padding:0.6rem 1.1rem; border-radius:8px; font-size:0.82rem; font-weight:800; cursor:pointer;">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> 전원 완주 시뮬레이션 (데모)
+          <i class="fa-solid fa-wand-magic-sparkles"></i> 전원 완주 시뮬레이션
         </button>
         <button onclick="openResetModal()" style="background:#EDF2F7; color:#64748B; border:none; padding:0.6rem 0.9rem; border-radius:8px; font-size:0.82rem; font-weight:700; cursor:pointer;">
-          <i class="fa-solid fa-rotate-right"></i> 초기화
+          <i class="fa-solid fa-lock"></i> 초기화 (비번1234)
         </button>
       </div>
     </div>
 
-    <!-- Section 1: 8 Museum Checkpoint Missions -->
+    <!-- Real-time Exhibition Pick Analytics Board -->
     <div class="section-header">
       <div class="section-title">
-        <i class="fa-solid fa-map-location-dot"></i> 국립중앙박물관 8대 필수 미션 명소
+        <i class="fa-solid fa-chart-simple"></i> 우리 팀 전시구간별 Pick 실시간 통계
       </div>
-      <span style="font-size:0.82rem; color:#64748B;">*사진 클릭 시 고화질 확대 / 사번 인증 후 스탬프 등록</span>
+      <span style="font-size:0.82rem; color:#64748B;">어떤 전시가 팀원들에게 가장 많은 선택을 받았을까요?</span>
     </div>
 
-    <div class="spots-grid" id="spotsGrid">
-      <!-- Injected by JS -->
+    <div class="stats-board">
+      <div class="stats-grid">
+        <!-- Permanent Stats -->
+        <div class="stats-col">
+          <h4><i class="fa-solid fa-crown" style="color:var(--gold);"></i> 7대 상설전시관 Pick 현황</h4>
+          <div id="permStatsBars"></div>
+        </div>
+        <!-- Special Stats -->
+        <div class="stats-col">
+          <h4><i class="fa-solid fa-star" style="color:var(--terracotta);"></i> 5대 특별전시 Pick 현황</h4>
+          <div id="specStatsBars"></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Section 2: 9 Team Members Live Dashboard -->
+    <!-- Section A: 7 Permanent Exhibitions -->
     <div class="section-header">
       <div class="section-title">
-        <i class="fa-solid fa-users"></i> 9인 팀원 실시간 출석 &amp; 미션 레이더
+        <i class="fa-solid fa-archway"></i> 7대 상설전시관 (1개 이상 Pick)
       </div>
-      <span style="font-size:0.82rem; color:#64748B;">동료들의 출석 시각과 현재 위치를 확인하세요.</span>
+      <a href="https://www.museum.go.kr/MUSEUM/contents/M0201010000.do" target="_blank" style="font-size:0.82rem; color:var(--celadon); font-weight:800; text-decoration:none;">
+        상설전시 공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
     </div>
+    <div class="exhibit-grid" id="permGrid"></div>
 
-    <div class="team-grid" id="teamCards">
-      <!-- Injected by JS -->
+    <!-- Section B: 5 Special Exhibitions -->
+    <div class="section-header">
+      <div class="section-title">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> 5대 특별전시 (1개 이상 Pick)
+      </div>
+      <a href="https://www.museum.go.kr/MUSEUM/contents/M0202010000.do?menuId=current" target="_blank" style="font-size:0.82rem; color:var(--gold); font-weight:800; text-decoration:none;">
+        특별전시 공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
     </div>
+    <div class="exhibit-grid" id="specGrid"></div>
 
-    <!-- Section 3: Final Destination - Mirror Pond Restaurant -->
+    <!-- Section C: 9 Team Members Live Status -->
+    <div class="section-header">
+      <div class="section-title">
+        <i class="fa-solid fa-users"></i> 9인 팀원 실시간 출석 &amp; 전시 Pick 레이더
+      </div>
+      <span style="font-size:0.82rem; color:#64748B;">동료들이 선택한 원픽 전시와 소감을 확인하세요.</span>
+    </div>
+    <div class="team-grid" id="teamCards"></div>
+
+    <!-- Section D: Final Destination - Mirror Pond Restaurant -->
     <div class="restaurant-detail-banner">
       <div class="rest-content">
         <span class="rest-tag">FINAL DESTINATION</span>
         <h2>🍽️ 국립중앙박물관 야외 정원 '거울못 식당'</h2>
         <p>
-          <strong>위치:</strong> 국립중앙박물관 야외 거울못 호수 옆 테라스<br>
-          호수와 남산타워가 한눈에 들어오는 탁 트인 테라스 다이닝! 화덕 피자, 시그니처 파스타, 스테이크와 와인/맥주를 곁들인 즐거운 팀 야유회 최종 회식 장소입니다.
+          <strong>위치:</strong> 국립중앙박물관 야외 거울못 호수 옆 테라스 다이닝<br>
+          아름다운 호수 전경과 함께 즐기는 화덕 피자, 파스타, 안심 스테이크와 와인 회식! 9명 전원 미션 완료 시 즉시 착석합니다.
         </p>
         <div class="rest-links">
           <a href="https://map.naver.com/p/search/국립중앙박물관%20거울못식당" target="_blank" class="btn-rest">
             <i class="fa-solid fa-map-location-dot"></i> 네이버 지도 길찾기
           </a>
           <a href="https://map.kakao.com/?q=국립중앙박물관%20거울못식당" target="_blank" class="btn-rest">
-            <i class="fa-solid fa-location-arrow"></i> 카카오맵 연결
+            <i class="fa-solid fa-location-arrow"></i> 카카오맵 길찾기
           </a>
         </div>
       </div>
@@ -766,7 +459,7 @@
 
   </div>
 
-  <!-- Attendance Modal (Security Passcode) -->
+  <!-- Attendance Modal -->
   <div class="modal-overlay" id="attendanceModal">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal('attendanceModal')">&times;</button>
@@ -774,65 +467,58 @@
         📍 09:30 집결 출석 체크 (<span id="modalAttnUserName"></span>)
       </h3>
       <p style="font-size:0.85rem; color:#64748B; margin-bottom:1.2rem;">
-        본인 확인을 위해 사번 6자리를 입력해주세요. 출석 등록 시 시각이 자동 기록됩니다.
+        본인 사번 6자리를 입력해주세요. 출석 등록 시 시각이 자동 기록됩니다.
       </p>
-
       <div class="form-group">
         <label>사번 6자리 입력</label>
         <input type="password" id="inputAttnEmpId" placeholder="예: 232605" maxlength="6" autocomplete="off">
-        <div class="security-note"><i class="fa-solid fa-shield-halved"></i> 본인 사번과 일치해야만 출석이 인정됩니다.</div>
+        <div class="security-note"><i class="fa-solid fa-shield-halved"></i> 본인 사번과 일치해야 출석이 완료됩니다.</div>
       </div>
-
       <button onclick="submitAttendance()" style="width:100%; background:#0284C7; color:#fff; border:none; padding:0.85rem; border-radius:8px; font-weight:800; font-size:0.95rem; cursor:pointer;">
         09:30 출석 체크 완료
       </button>
     </div>
   </div>
 
-  <!-- Mission Check-in Modal (Security Passcode) -->
-  <div class="modal-overlay" id="missionModal">
+  <!-- Pick Check-in Modal -->
+  <div class="modal-overlay" id="pickModal">
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('missionModal')">&times;</button>
+      <button class="modal-close" onclick="closeModal('pickModal')">&times;</button>
       <h3 style="color:var(--celadon-dark); font-size:1.25rem; margin-bottom:0.4rem;">
-        🏛️ <span id="modalMissionSpotName"></span> 미션 체크인
+        🎯 [<span id="modalPickExhibitName"></span>] Pick &amp; 관람 완료
       </h3>
       <p style="font-size:0.85rem; color:#64748B; margin-bottom:1.2rem;">
-        관람 완료 스탬프 등록을 위해 사번 6자리를 입력해주세요.
+        이 전시를 나의 대표 Pick으로 등록하고 사번 6자리를 입력해주세요.
       </p>
-
       <div class="form-group">
         <label>사번 6자리 입력</label>
-        <input type="password" id="inputMissionEmpId" placeholder="본인 사번 입력" maxlength="6" autocomplete="off">
+        <input type="password" id="inputPickEmpId" placeholder="본인 사번 입력" maxlength="6" autocomplete="off">
       </div>
-
       <div class="form-group">
-        <label>현장 한 줄 감상평 / 소감</label>
-        <textarea id="modalMissionComment" rows="3" placeholder="예: 반가사유상의 온화한 미소에 마음이 절로 편안해집니다."></textarea>
+        <label>인상 깊었던 점 / 한 줄 감상평</label>
+        <textarea id="modalPickComment" rows="3" placeholder="예: 반가사유상의 온화한 미소와 공간 설계가 완벽했습니다!"></textarea>
       </div>
-
-      <button onclick="submitMissionCheckin()" style="width:100%; background:var(--celadon); color:#fff; border:none; padding:0.85rem; border-radius:8px; font-weight:800; font-size:0.95rem; cursor:pointer;">
-        스탬프 등록 &amp; 실시간 공유
+      <button onclick="submitPickCheckin()" style="width:100%; background:var(--celadon); color:#fff; border:none; padding:0.85rem; border-radius:8px; font-weight:800; font-size:0.95rem; cursor:pointer;">
+        전시 Pick &amp; 스탬프 등록
       </button>
     </div>
   </div>
 
-  <!-- Reset Passcode Verification Modal -->
+  <!-- Reset Password Modal (Password: 1234) -->
   <div class="modal-overlay" id="resetModal">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal('resetModal')">&times;</button>
       <h3 style="color:var(--terracotta); font-size:1.25rem; margin-bottom:0.4rem;">
-        ⚠️ 데이터 전체 초기화 보안 검증
+        ⚠️ 전체 데이터 초기화 보안 검증
       </h3>
       <p style="font-size:0.85rem; color:#64748B; margin-bottom:1.2rem;">
         팀 야유회 전체 데이터를 리셋하려면 관리자 비밀번호를 입력해주세요.
       </p>
-
       <div class="form-group">
         <label>초기화 비밀번호</label>
         <input type="password" id="inputResetPassword" placeholder="비밀번호 4자리" maxlength="4" autocomplete="off">
         <div class="security-note"><i class="fa-solid fa-lock"></i> 마스터 비밀번호 "1234"가 필요합니다.</div>
       </div>
-
       <button onclick="submitReset()" style="width:100%; background:var(--terracotta); color:#fff; border:none; padding:0.85rem; border-radius:8px; font-weight:800; font-size:0.95rem; cursor:pointer;">
         보안 초기화 실행
       </button>
@@ -850,11 +536,11 @@
   <!-- Footer -->
   <footer>
     <p><strong>국립중앙박물관 문화 야유회 &amp; 거울못 식당 회식 트래커</strong></p>
-    <p style="margin-top:0.4rem; font-size:0.75rem;">부품기술연구팀 9인 단체 산책 · 집결지: 이촌역 2번 출구 박물관 나들길</p>
+    <p style="margin-top:0.4rem; font-size:0.75rem;">부품기술연구팀 9인 단체 전시 탐방 · 집결지: 이촌역 2번 출구 박물관 나들길</p>
   </footer>
 
   <script>
-    // 1. Fixed 9 Team Members & Strict Employee ID Mapping
+    // 1. 9 Fixed Team Members & Strict Employee ID Mapping
     const fixedTeamMembers = [
       { id: 1, name: '김성우', empId: '232605', role: '팀장' },
       { id: 2, name: '이상훈', empId: '245137', role: '팀원' },
@@ -867,80 +553,128 @@
       { id: 9, name: '박형배', empId: '113633', role: '팀원' }
     ];
 
-    // 2. National Museum of Korea 8 Checkpoint Missions (Connected to Official museum.go.kr Domain)
-    const museumMissions = [
+    // 2. 7 Permanent Exhibitions with Official Links & museum.go.kr Images
+    const permanentExhibits = [
       {
-        id: 'spot_1',
-        name: '거울못 & 청자정',
-        category: '야외 전통정원',
-        location: '박물관 정문 앞 호수',
-        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_03.jpg',
-        desc: '박물관 전면에 위치한 드넓은 전통 연못 정원. 호수 물결에 비치는 박물관 건축과 청자기와를 얹은 우아한 청자정의 반영을 감상합니다.'
-      },
-      {
-        id: 'spot_2',
-        name: '열린마당 (남산타워 뷰)',
-        category: '건축 & 포토존',
-        location: '박물관 메인 중정',
-        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_01.jpg',
-        desc: '동관과 서관 사이 거대한 열린 구조물 사이로 N서울타워와 남산 풍경이 액자처럼 담기는 대한민국 최고의 건축 뷰포인트. 단체 인증샷 명소!'
-      },
-      {
-        id: 'spot_3',
-        name: '경천사지 십층석탑',
-        category: '국보 제86호',
-        location: '상설전시관 1층 역사의 길',
-        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_02.jpg',
-        desc: '고려 후기(1348년) 대리석으로 제작된 13.5m 높이의 걸작 불탑. 전통 목조건축 양식과 서유기 설화가 섬세하게 조각되어 로비 천장을 뚫을 듯 장엄합니다.'
-      },
-      {
-        id: 'spot_4',
-        name: '신라 금관 & 금제 허리띠',
-        category: '국보 제191호',
-        location: '1층 선사·고대관 신라실',
+        id: 'perm_1',
+        name: '선사·고대관',
+        floor: '상설전시관 1층',
+        sub: '구석기 ~ 통일신라·발해',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0201010000.do',
         thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_04.jpg',
-        desc: '황남대총 북분에서 출토된 황금의 나라 신라의 정수. 사슴뿔과 나뭇가지 형태의 세움식 장식과 영롱한 비취 옥이 화려함의 극치를 보여줍니다.'
+        desc: '한반도 인류의 시작부터 황남대총 신라 금관, 백제 금동대향로 등 찬란했던 고대 삼국의 황금빛 유물을 총망라합니다.'
       },
       {
-        id: 'spot_5',
-        name: '사유의 방 (반가사유상)',
-        category: '국보 78호 & 83호',
-        location: '상설전시관 2층 전용관',
+        id: 'perm_2',
+        name: '중·근세관',
+        floor: '상설전시관 1층',
+        sub: '고려 · 조선 · 대한제국',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0201010000.do',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_02.jpg',
+        desc: '로비에 우뚝 선 국보 경천사지 십층석탑과 훈민정음, 조선왕조의궤, 대동여지도 등 한민족 역사의 위대한 기록 유산들을 만납니다.'
+      },
+      {
+        id: 'perm_3',
+        name: '서화관',
+        floor: '상설전시관 2층',
+        sub: '서예 · 회화 · 불교회화',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0201010000.do',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_01.jpg',
+        desc: '겸재 정선, 단원 김홍도 등 거장들의 명품 산수화와 풍속화, 그리고 장엄한 대형 괘불이 펼쳐지는 한국 전통 미술의 정수입니다.'
+      },
+      {
+        id: 'perm_4',
+        name: '기증관',
+        floor: '상설전시관 2층',
+        sub: '손기정 투구 · 이건희 컬렉션 등',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0201010000.do',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_03.jpg',
+        desc: '평생을 바쳐 모은 소중한 문화유산을 사회와 나눈 기증자들의 숭고한 뜻과 손기정 청동투구 등 국보급 명품들을 감상합니다.'
+      },
+      {
+        id: 'perm_5',
+        name: '사유의 방',
+        floor: '상설전시관 2층 전용관',
+        sub: '국보 반가사유상 2점',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0201010000.do',
         thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_05.jpg',
-        desc: '국보 반가사유상 두 점이 어둠 속 은은한 조명 아래 나란히 자리한 몰입형 사유 공간. 생로병사의 고뇌를 넘어선 깊은 미소가 큰 위로를 건넵니다.'
+        desc: '어둠 속 은은한 조명 아래 나란히 자리한 국보 반가사유상 두 점. 고요한 침묵 속에서 삶과 사유의 깊은 위로를 건네는 국중박 최고의 공간입니다.'
       },
       {
-        id: 'spot_6',
-        name: '청자 투각향로 & 달항아리',
-        category: '도자공예관 명품',
-        location: '상설전시관 3층 조각·공예관',
+        id: 'perm_6',
+        name: '조각·공예관',
+        floor: '상설전시관 3층',
+        sub: '고려청자 · 분청사기 · 달항아리',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0201010000.do',
         thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_06.jpg',
-        desc: '비취색 영롱한 빛깔의 고려청자 투각칠보문향로와 넉넉하고 순백의 미학을 자랑하는 조선 백자 달항아리가 있는 한국 도예 예술의 정점입니다.'
+        desc: '비취색 영롱한 빛깔의 고려청자와 자유분방한 분청사기, 순백의 넉넉한 미학을 뽐내는 조선 백자 달항아리의 아름다움에 빠져듭니다.'
       },
       {
-        id: 'spot_7',
-        name: '디지털 실감 영상관',
-        category: '미디어아트 체험',
-        location: '상설전시관 1층 중·근세관 인근',
-        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_07.jpg',
-        desc: '조선시대 파노라마 풍속화와 금강산 산수를 360도 초대형 파노라마 스크린으로 생생하게 복원한 첨단 미디어아트 체험 전시실입니다.'
-      },
-      {
-        id: 'spot_8',
-        name: '미르폭포 & 석조정원',
-        category: '야외 숲길 산책로',
-        location: '박물관 북서측 야외 산책로',
+        id: 'perm_7',
+        name: '세계문화관',
+        floor: '상설전시관 3층',
+        sub: '이집트 · 메소포타미아 · 중앙아시아',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0201010000.do',
         thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_08.jpg',
-        desc: '용산(龍山)의 옛 순우리말 미르에서 유래한 숲속 인공 폭포와 시원한 계곡. 통일신라·고려 석탑과 부도가 숲길을 따라 늘어서 있어 산림욕을 선사합니다.'
+        desc: '고대 이집트의 미라와 관, 인류 최초의 문자를 남긴 메소포타미아 쐐기문자 점토판 등 인류 문명의 위대한 발자취를 한눈에 둘러봅니다.'
+      }
+    ];
+
+    // 3. 5 Special Exhibitions with Official Links & Images
+    const specialExhibits = [
+      {
+        id: 'spec_1',
+        name: '우리들의 밥상',
+        floor: '상설전시관 1층 특별전시실 2',
+        sub: 'K-푸드의 1500년 역사와 식문화',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0202010000.do?menuId=current',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_07.jpg',
+        desc: '3천 년 전 불탄 볍씨부터 무령왕릉 출토 왕실 식기, 박수근의 회화까지 우리의 일상 밥상이 어떻게 역사와 문화가 되었는지 조명합니다.'
+      },
+      {
+        id: 'spec_2',
+        name: '각(角)진 백자 이야기',
+        floor: '3층 분청사기·백자실',
+        sub: '조선 18세기 모깎기 백자의 미학',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0202010000.do?menuId=current',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_06.jpg',
+        desc: '둥근 형태에서 벗어나 외면을 각지게 모깎기하여 절제된 입체미와 빛의 음영을 창출해낸 조선 후기 백자의 세련된 조형미를 선보입니다.'
+      },
+      {
+        id: 'spec_3',
+        name: '우리들의 이순신',
+        floor: '특별전시실',
+        sub: '광복/박물관 80주년 기념 특별전',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0202010000.do?menuId=current',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_03.jpg',
+        desc: '임진왜란의 전란 속에서도 평화를 염원했던 충무공 이순신의 친필 난중일기와 장검, 조선 수군의 승전 서사를 융합연구로 생생히 복원합니다.'
+      },
+      {
+        id: 'spec_4',
+        name: '스투파의 숲, 인도 이야기',
+        floor: '기획전시실',
+        sub: '남인도 불교미술의 정수',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0202010000.do?menuId=current',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_08.jpg',
+        desc: '인도 뉴델리 국립박물관 등 현지 주요 박물관의 불교 조각과 스투파(부처의 사리탑) 부조를 통해 신비로운 고대 인도 미술의 숲을 거닙니다.'
+      },
+      {
+        id: 'spec_5',
+        name: '마리 앙투아네트 스타일',
+        floor: '특별전시실 1',
+        sub: '영국 V&A 소장 유럽 왕실 예술',
+        link: 'https://www.museum.go.kr/MUSEUM/contents/M0202010000.do?menuId=current',
+        thumb: 'https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_01.jpg',
+        desc: '영국 빅토리아 앤 앨버트 박물관(V&A) 소장품을 중심으로 18세기 프랑스 베르사유 궁정의 화려한 패션, 가구, 공예와 디자인 혁신을 조망합니다.'
       }
     ];
 
     let currentUserId = 1;
-    let targetSpotId = null;
+    let targetExhibit = null;
 
-    // Load / Save Local Storage
-    function getStoredData() {
-      const saved = localStorage.getItem('nmk_team_state_v4');
+    // LocalStorage State Management
+    function getStoredState() {
+      const saved = localStorage.getItem('nmk_team_picks_v5');
       if (saved) {
         try { return JSON.parse(saved); } catch(e){}
       }
@@ -949,20 +683,23 @@
         initial[m.id] = {
           attended: false,
           attendTime: null,
-          checks: [],
-          lastSpot: '집결 대기 중',
-          lastMsg: '09:30 국립중앙박물관 집결 대기 중입니다.',
-          lastTime: '대기 중'
+          permPick: null,
+          permMsg: '',
+          permTime: '',
+          specPick: null,
+          specMsg: '',
+          specTime: ''
         };
       });
       return initial;
     }
 
-    function saveStoredData(data) {
-      localStorage.setItem('nmk_team_state_v4', JSON.stringify(data));
+    function saveStoredState(data) {
+      localStorage.setItem('nmk_team_picks_v5', JSON.stringify(data));
       renderAll();
     }
 
+    // Reset Modal & Verification (Password: 1234)
     function openResetModal() {
       document.getElementById('inputResetPassword').value = '';
       document.getElementById('resetModal').style.display = 'flex';
@@ -971,16 +708,16 @@
     function submitReset() {
       const pw = document.getElementById('inputResetPassword').value;
       if (pw === '1234') {
-        localStorage.removeItem('nmk_team_state_v4');
+        localStorage.removeItem('nmk_team_picks_v5');
         closeModal('resetModal');
         renderAll();
-        alert('🔄 전체 야유회 참여 현황 및 미션 데이터가 안전하게 초기화되었습니다.');
+        alert('🔄 전체 야유회 출석 및 전시 Pick 데이터가 안전하게 초기화되었습니다.');
       } else {
-        alert('❌ 비밀번호가 올바르지 않습니다. 초기화 권한이 차단되었습니다.');
+        alert('❌ 비밀번호가 올바르지 않습니다. (마스터 비번 1234 필요)');
       }
     }
 
-    // Populate User Dropdown
+    // User Dropdown
     function initUserDropdown() {
       const select = document.getElementById('userSelect');
       select.innerHTML = '';
@@ -998,34 +735,108 @@
       renderAll();
     }
 
-    // Render 8 Mission Spots
-    function renderSpots() {
-      const container = document.getElementById('spotsGrid');
-      container.innerHTML = '';
-      const stateData = getStoredData();
-      const myState = stateData[currentUserId] || { attended: false, checks: [] };
+    // Render Statistics Bars
+    function renderStatistics() {
+      const state = getStoredState();
+      const permCounts = {};
+      permanentExhibits.forEach(e => permCounts[e.id] = 0);
+      const specCounts = {};
+      specialExhibits.forEach(e => specCounts[e.id] = 0);
 
-      museumMissions.forEach(spot => {
-        const isDone = (myState.checks || []).includes(spot.id);
-        const card = document.createElement('div');
-        card.className = `spot-card ${isDone ? 'completed' : ''}`;
+      fixedTeamMembers.forEach(m => {
+        const s = state[m.id];
+        if (s.permPick && permCounts[s.permPick] !== undefined) permCounts[s.permPick]++;
+        if (s.specPick && specCounts[s.specPick] !== undefined) specCounts[s.specPick]++;
+      });
 
-        card.innerHTML = `
-          <div class="spot-thumb-wrap" onclick="openLightbox('${spot.thumb}', '${spot.name} - ${spot.category}')">
-            <img src="${spot.thumb}" alt="${spot.name}" class="spot-thumb" loading="lazy">
-            <span class="spot-badge">${spot.location}</span>
-            <div class="stamp-overlay">
-              <span><i class="fa-solid fa-stamp"></i> 관람 완료</span>
+      const totalMembers = fixedTeamMembers.length;
+
+      // Render Permanent Stats
+      const permContainer = document.getElementById('permStatsBars');
+      permContainer.innerHTML = '';
+      permanentExhibits.forEach(e => {
+        const count = permCounts[e.id] || 0;
+        const pct = Math.round((count / totalMembers) * 100);
+        permContainer.innerHTML += `
+          <div class="stat-bar-item">
+            <div class="stat-label-wrap">
+              <span>${e.name}</span>
+              <span style="color:var(--celadon);">${count}명 (${pct}%)</span>
+            </div>
+            <div class="stat-track">
+              <div class="stat-fill fill-perm" style="width:${pct}%;"></div>
             </div>
           </div>
-          <div class="spot-body">
-            <div>
-              <div class="spot-cat"><i class="fa-solid fa-bookmark"></i> ${spot.category}</div>
-              <h3 class="spot-name">${spot.name}</h3>
-              <p class="spot-desc">${spot.desc}</p>
+        `;
+      });
+
+      // Render Special Stats
+      const specContainer = document.getElementById('specStatsBars');
+      specContainer.innerHTML = '';
+      specialExhibits.forEach(e => {
+        const count = specCounts[e.id] || 0;
+        const pct = Math.round((count / totalMembers) * 100);
+        specContainer.innerHTML += `
+          <div class="stat-bar-item">
+            <div class="stat-label-wrap">
+              <span>${e.name}</span>
+              <span style="color:var(--gold);">${count}명 (${pct}%)</span>
             </div>
-            <button class="btn-spot-action" onclick="openMissionModal('${spot.id}')">
-              ${isDone ? '<i class="fa-solid fa-check-double"></i> 관람 완료됨 (재기록)' : '<i class="fa-solid fa-lock"></i> 사번 인증 후 체크인'}
+            <div class="stat-track">
+              <div class="stat-fill fill-spec" style="width:${pct}%;"></div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    // Render Cards Helper
+    function renderExhibitsGrid(containerId, list, type) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      const state = getStoredState();
+      const myState = state[currentUserId] || {};
+      const myPickId = type === 'perm' ? myState.permPick : myState.specPick;
+
+      list.forEach(ex => {
+        const isMyPicked = myPickId === ex.id;
+
+        // Find which members picked this
+        const pickedMembers = fixedTeamMembers.filter(m => {
+          const s = state[m.id];
+          return type === 'perm' ? (s.permPick === ex.id) : (s.specPick === ex.id);
+        });
+
+        const card = document.createElement('div');
+        card.className = `exhibit-card ${isMyPicked ? 'my-picked' : ''}`;
+
+        let membersTagsHtml = '';
+        pickedMembers.forEach(pm => {
+          membersTagsHtml += `<span class="picker-tag"><i class="fa-solid fa-user"></i> ${pm.name}</span>`;
+        });
+
+        card.innerHTML = `
+          <div class="thumb-wrap" onclick="openLightbox('${ex.thumb}', '${ex.name} - ${ex.sub}')">
+            <img src="${ex.thumb}" alt="${ex.name}" class="thumb-img" onerror="this.src='https://www.museum.go.kr/MUSEUM/images/introduction/img_intro_bg_01.jpg'">
+            <span class="badge-floor">${ex.floor}</span>
+            <a href="${ex.link}" target="_blank" class="badge-official-link" onclick="event.stopPropagation();">
+              공식 안내 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="stamp-overlay">
+              <span><i class="fa-solid fa-circle-check"></i> 나의 Pick 완료</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-sub">${ex.sub}</div>
+              <h3 class="card-title">${ex.name}</h3>
+              <p class="card-desc">${ex.desc}</p>
+              <div class="picked-members-list">
+                ${membersTagsHtml || '<span style="font-size:0.72rem; color:#94A3B8;">아직 Pick한 팀원이 없습니다.</span>'}
+              </div>
+            </div>
+            <button class="btn-pick-action" onclick="openPickModal('${ex.id}', '${ex.name}', '${type}')">
+              ${isMyPicked ? '<i class="fa-solid fa-check"></i> 관람 완료됨 (재기록)' : '<i class="fa-solid fa-hand-pointer"></i> 이 전시 Pick &amp; 완료'}
             </button>
           </div>
         `;
@@ -1033,23 +844,28 @@
       });
     }
 
-    // Render 9 Team Members Live Radar
+    // Render 9 Members Radar
     function renderTeamDashboard() {
       const container = document.getElementById('teamCards');
       container.innerHTML = '';
-      const stateData = getStoredData();
+      const state = getStoredState();
 
       let attendedCount = 0;
-      let allFinishedCount = 0;
+      let allDoneCount = 0;
 
       fixedTeamMembers.forEach(m => {
         const isMe = m.id === currentUserId;
-        const s = stateData[m.id] || { attended: false, checks: [] };
-        const doneMissions = s.checks || [];
-        const isAllDone = doneMissions.length >= museumMissions.length;
+        const s = state[m.id];
+        const isAttn = s.attended;
+        const isPermDone = !!s.permPick;
+        const isSpecDone = !!s.specPick;
+        const isAllDone = isAttn && isPermDone && isSpecDone;
 
-        if (s.attended) attendedCount++;
-        if (s.attended && isAllDone) allFinishedCount++;
+        if (isAttn) attendedCount++;
+        if (isAllDone) allDoneCount++;
+
+        const permObj = permanentExhibits.find(e => e.id === s.permPick);
+        const specObj = specialExhibits.find(e => e.id === s.specPick);
 
         const card = document.createElement('div');
         card.className = `member-card ${isMe ? 'is-me' : ''}`;
@@ -1061,68 +877,71 @@
                 <div class="member-avatar">${m.name.substring(0, 2)}</div>
                 <div class="member-name">
                   <h4>${m.name} ${isMe ? '<span style="color:var(--celadon); font-size:0.8rem;">(나)</span>' : ''}</h4>
-                  <span>${m.role}</span>
+                  <span>${m.role} · 사번 ${m.empId.substring(0,3)}***</span>
                 </div>
               </div>
               <span class="member-badge-count ${isAllDone ? 'all-done' : ''}">
-                ${isAllDone ? '🏅 8/8 완주' : `${doneMissions.length}/8 완료`}
+                ${isAllDone ? '🏅 완주 완료' : `${(isPermDone?1:0) + (isSpecDone?1:0)}/2 Pick`}
               </span>
             </div>
 
-            <div>
-              <span class="member-status-pill ${s.attended ? 'pill-arrived' : 'pill-waiting'}">
-                <i class="fa-solid ${s.attended ? 'fa-check' : 'fa-hourglass-half'}"></i> 
-                ${s.attended ? `09:30 집결 출석 (${s.attendTime || ''})` : '집결 미출석'}
+            <div style="margin-bottom:0.6rem;">
+              <span style="font-size:0.75rem; padding:0.2rem 0.55rem; border-radius:6px; font-weight:700; ${isAttn ? 'background:#E0F2FE; color:#0284C7;' : 'background:#FEE2E2; color:#EF4444;'}">
+                <i class="fa-solid ${isAttn ? 'fa-check' : 'fa-clock'}"></i> ${isAttn ? `09:30 출석 완료 (${s.attendTime})` : '집결 미출석'}
               </span>
             </div>
 
-            <div class="member-recent-msg">
-              <strong>${s.lastSpot}:</strong> "${s.lastMsg}"
+            <div class="member-picks-box">
+              <div><strong>🏛️ 상설 Pick:</strong> ${permObj ? `${permObj.name} (${s.permTime})` : '<span style="color:#94A3B8;">미선택</span>'}</div>
+              ${s.permMsg ? `<div style="font-size:0.76rem; color:#64748B; margin-left:1.1rem;">"${s.permMsg}"</div>` : ''}
+              <div style="margin-top:0.3rem;"><strong>⭐ 특별 Pick:</strong> ${specObj ? `${specObj.name} (${s.specTime})` : '<span style="color:#94A3B8;">미선택</span>'}</div>
+              ${s.specMsg ? `<div style="font-size:0.76rem; color:#64748B; margin-left:1.1rem;">"${s.specMsg}"</div>` : ''}
             </div>
           </div>
-
-          <div class="member-time-meta">
-            <span><i class="fa-solid fa-clock-rotate-left"></i> 최근 기록: ${s.lastTime}</span>
-            <span>달성률 ${Math.round((doneMissions.length / museumMissions.length) * 100)}%</span>
+          <div style="font-size:0.73rem; color:#94A3B8; text-align:right;">
+            상태: ${isAllDone ? '식당 이동 준비 완료 ✨' : '전시 관람 진행 중 🚶‍♂️'}
           </div>
         `;
         container.appendChild(card);
       });
 
-      // Update Attendance Gate
+      // Update Attendance Top Gate
       document.getElementById('attnDoneCountText').textContent = `${attendedCount} / 9명 출석`;
-      const meState = stateData[currentUserId] || {};
+      const myState = state[currentUserId] || {};
       const btnAttn = document.getElementById('btnHeaderAttn');
       const btnAttnLabel = document.getElementById('btnAttnLabel');
-      if (meState.attended) {
+      if (myState.attended) {
         btnAttn.className = 'btn-attn done';
-        btnAttnLabel.textContent = `출석 완료 (${meState.attendTime})`;
+        btnAttnLabel.textContent = `출석 완료 (${myState.attendTime})`;
       } else {
         btnAttn.className = 'btn-attn';
         btnAttnLabel.textContent = `09:30 출석 체크하기`;
       }
 
       // Update My status bar
-      const meObj = fixedTeamMembers.find(m => m.id === currentUserId);
-      document.getElementById('myProfileName').textContent = meObj.name;
-      const myChecks = meState.checks || [];
-      document.getElementById('myMissionProgress').textContent = `${myChecks.length}/8 미션 완주 (${Math.round((myChecks.length/8)*100)}%)`;
-
+      const me = fixedTeamMembers.find(m => m.id === currentUserId);
+      document.getElementById('myProfileName').textContent = me.name;
       const myAttnBadge = document.getElementById('myAttnBadge');
-      if (meState.attended) {
-        myAttnBadge.className = 'member-status-pill pill-arrived';
-        myAttnBadge.textContent = `09:30 출석 완료 (${meState.attendTime})`;
+      if (myState.attended) {
+        myAttnBadge.style.background = '#E0F2FE';
+        myAttnBadge.style.color = '#0284C7';
+        myAttnBadge.textContent = `09:30 출석 완료 (${myState.attendTime})`;
       } else {
-        myAttnBadge.className = 'member-status-pill pill-waiting';
-        myAttnBadge.textContent = '출석 미완료';
+        myAttnBadge.style.background = '#FEE2E2';
+        myAttnBadge.style.color = '#EF4444';
+        myAttnBadge.textContent = '출석 대기';
       }
 
+      const pDone = !!myState.permPick;
+      const sDone = !!myState.specPick;
+      document.getElementById('myPickProgress').textContent = (pDone && sDone) ? '🎉 상설+특별 2건 완주 완료!' : `진행: 상설(${pDone?'완료':'미완료'}) / 특별(${sDone?'완료':'미완료'})`;
+
       // Update Final Restaurant Gate
-      updateRestaurantGate(allFinishedCount, fixedTeamMembers.length);
+      updateRestaurantGate(allDoneCount, fixedTeamMembers.length);
     }
 
-    // Restaurant Unlock Logic
-    function updateRestaurantGate(finishedCount, totalTeam) {
+    // Gate Unlock Logic
+    function updateRestaurantGate(doneCount, total) {
       const gateCard = document.getElementById('restaurantGateCard');
       const gateIcon = document.getElementById('restGateIcon');
       const gateTitle = document.getElementById('restGateTitle');
@@ -1130,23 +949,23 @@
       const restGateCountText = document.getElementById('restGateCountText');
       const restArrivedCount = document.getElementById('restArrivedCount');
 
-      restGateCountText.textContent = `${finishedCount} / ${totalTeam}명 완주`;
-      restArrivedCount.textContent = `${finishedCount} / ${totalTeam}명`;
+      restGateCountText.textContent = `${doneCount} / ${total}명 완주`;
+      restArrivedCount.textContent = `${doneCount} / ${total}명`;
 
-      if (finishedCount === totalTeam) {
+      if (doneCount === total) {
         gateCard.className = 'gate-card unlocked';
         gateIcon.innerHTML = '<i class="fa-solid fa-champagne-glasses"></i>';
-        gateTitle.innerHTML = '🎉 9명 전원 집결 &amp; 8대 명소 관람 완료! 거울못 식당 입장 승인 🔓';
+        gateTitle.innerHTML = '🎉 9명 전원 집결 &amp; 전시 Pick 관람 완료! 거울못 식당 입장 승인 🔓';
         gateSub.innerHTML = '모든 팀원이 미션을 완벽히 완주했습니다! 지금 즉시 <strong>야외 거울못 식당</strong>으로 집결하세요!';
       } else {
         gateCard.className = 'gate-card locked';
         gateIcon.innerHTML = '<i class="fa-solid fa-lock"></i>';
-        gateTitle.innerHTML = `거울못 식당 회식 이동: 관람 진행 중 (${finishedCount}/${totalTeam}명 완료)`;
-        gateSub.innerHTML = `9명 전원 집결 출석 및 8개 미션 명소를 100% 관람 완료해야 거울못 식당으로 이동할 수 있습니다. (잔여 ${totalTeam - finishedCount}명)`;
+        gateTitle.innerHTML = `거울못 식당 회식 이동: 관람 진행 중 (${doneCount}/${total}명 완료)`;
+        gateSub.innerHTML = `9명 전원 출석 및 상설/특별전시 Pick 관람을 모두 완료해야 식당으로 이동할 수 있습니다. (잔여 ${total - doneCount}명)`;
       }
     }
 
-    // Modal Operations
+    // Attendance Modal
     function openAttendanceModal() {
       const me = fixedTeamMembers.find(m => m.id === currentUserId);
       document.getElementById('modalAttnUserName').textContent = me.name;
@@ -1158,100 +977,86 @@
       const me = fixedTeamMembers.find(m => m.id === currentUserId);
       const inputEmp = document.getElementById('inputAttnEmpId').value.trim();
 
-      if (!inputEmp) {
-        alert("사번 6자리를 입력해주세요.");
-        return;
-      }
-      if (inputEmp !== me.empId) {
-        alert("⚠️ 사번이 일치하지 않습니다. 본인의 사번을 정확히 입력해주세요.");
-        return;
-      }
+      if (!inputEmp) { alert("사번 6자리를 입력해주세요."); return; }
+      if (inputEmp !== me.empId) { alert("⚠️ 사번이 일치하지 않습니다. 본인 사번을 입력해주세요."); return; }
 
       const now = new Date();
       const timeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
 
-      const stateData = getStoredData();
-      stateData[currentUserId].attended = true;
-      stateData[currentUserId].attendTime = timeStr;
-      stateData[currentUserId].lastSpot = '09:30 집결 출석 완료';
-      stateData[currentUserId].lastMsg = '국립중앙박물관에 도착하여 출석을 완료했습니다!';
-      stateData[currentUserId].lastTime = timeStr;
-
-      saveStoredData(stateData);
+      const state = getStoredState();
+      state[currentUserId].attended = true;
+      state[currentUserId].attendTime = timeStr;
+      saveStoredState(state);
       closeModal('attendanceModal');
-      alert(`✅ [${me.name}]님, 09:30 집결 출석이 정상적으로 확인되었습니다! 이제 8대 명소 미션을 시작해주세요.`);
+      alert(`✅ [${me.name}]님, 09:30 집결 출석이 완료되었습니다! 마음에 드는 전시를 Pick하여 관람해주세요.`);
     }
 
-    function openMissionModal(spotId) {
-      const stateData = getStoredData();
-      const myState = stateData[currentUserId] || {};
-
-      if (!myState.attended) {
-        alert("⚠️ 아직 09:30 집결 출석을 하지 않았습니다!\n상단의 [09:30 출석 체크하기]를 먼저 완료한 후 미션을 진행해주세요.");
+    // Pick Modal
+    function openPickModal(id, name, type) {
+      const state = getStoredState();
+      if (!state[currentUserId].attended) {
+        alert("⚠️ 아직 09:30 집결 출석을 하지 않았습니다!\n상단의 [09:30 출석 체크하기]를 먼저 완료해주세요.");
         return;
       }
 
-      targetSpotId = spotId;
-      const spot = museumMissions.find(s => s.id === spotId);
-      document.getElementById('modalMissionSpotName').textContent = spot.name;
-      document.getElementById('inputMissionEmpId').value = '';
-      document.getElementById('modalMissionComment').value = '';
-      document.getElementById('missionModal').style.display = 'flex';
+      targetExhibit = { id, name, type };
+      document.getElementById('modalPickExhibitName').textContent = name;
+      document.getElementById('inputPickEmpId').value = '';
+      document.getElementById('modalPickComment').value = '';
+      document.getElementById('pickModal').style.display = 'flex';
     }
 
-    function submitMissionCheckin() {
-      if (!targetSpotId) return;
+    function submitPickCheckin() {
+      if (!targetExhibit) return;
       const me = fixedTeamMembers.find(m => m.id === currentUserId);
-      const inputEmp = document.getElementById('inputMissionEmpId').value.trim();
-      const comment = document.getElementById('modalMissionComment').value.trim();
-      const spot = museumMissions.find(s => s.id === targetSpotId);
+      const inputEmp = document.getElementById('inputPickEmpId').value.trim();
+      const comment = document.getElementById('modalPickComment').value.trim();
 
-      if (!inputEmp) {
-        alert("사번 6자리를 입력해주세요.");
-        return;
-      }
-      if (inputEmp !== me.empId) {
-        alert("⚠️ 사번이 일치하지 않습니다. 본인의 사번을 정확히 입력해주세요.");
-        return;
-      }
+      if (!inputEmp) { alert("사번 6자리를 입력해주세요."); return; }
+      if (inputEmp !== me.empId) { alert("⚠️ 사번이 일치하지 않습니다. 본인 사번을 입력해주세요."); return; }
 
       const now = new Date();
       const timeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
 
-      const stateData = getStoredData();
-      if (!stateData[currentUserId].checks.includes(targetSpotId)) {
-        stateData[currentUserId].checks.push(targetSpotId);
+      const state = getStoredState();
+      if (targetExhibit.type === 'perm') {
+        state[currentUserId].permPick = targetExhibit.id;
+        state[currentUserId].permMsg = comment || `${targetExhibit.name} 관람 완료!`;
+        state[currentUserId].permTime = timeStr;
+      } else {
+        state[currentUserId].specPick = targetExhibit.id;
+        state[currentUserId].specMsg = comment || `${targetExhibit.name} 관람 완료!`;
+        state[currentUserId].specTime = timeStr;
       }
-      stateData[currentUserId].lastSpot = spot.name;
-      stateData[currentUserId].lastMsg = comment || `${spot.name} 관람 완료!`;
-      stateData[currentUserId].lastTime = timeStr;
 
-      saveStoredData(stateData);
-      closeModal('missionModal');
-      alert(`🎯 [${spot.name}] 관람 스탬프가 성공적으로 인증 및 등록되었습니다! (${timeStr})`);
+      saveStoredState(state);
+      closeModal('pickModal');
+      alert(`🎯 [${targetExhibit.name}] 전시가 나의 원픽으로 성공적으로 등록되었습니다! (${timeStr})`);
     }
 
-    // Demo: Simulation
+    // Simulate All Finish
     function simulateAllFinish() {
-      const stateData = getStoredData();
-      const allSpotIds = museumMissions.map(s => s.id);
-      fixedTeamMembers.forEach(m => {
-        stateData[m.id].attended = true;
-        stateData[m.id].attendTime = '09:28:10';
-        stateData[m.id].checks = [...allSpotIds];
-        stateData[m.id].lastSpot = '미르폭포 & 석조정원';
-        stateData[m.id].lastMsg = '8개 명소 관람 완료! 거울못 식당으로 이동합니다!';
-        stateData[m.id].lastTime = '11:45:00';
+      const state = getStoredState();
+      const permIds = permanentExhibits.map(e => e.id);
+      const specIds = specialExhibits.map(e => e.id);
+
+      fixedTeamMembers.forEach((m, idx) => {
+        state[m.id].attended = true;
+        state[m.id].attendTime = '09:28:15';
+        state[m.id].permPick = permIds[idx % permIds.length];
+        state[m.id].permMsg = '상설전시 명작들을 깊이 있게 감상했습니다!';
+        state[m.id].permTime = '10:45:10';
+        state[m.id].specPick = specIds[idx % specIds.length];
+        state[m.id].specMsg = '특별전시의 기획과 유물 스토리가 정말 흥미로웠습니다.';
+        state[m.id].specTime = '11:40:20';
       });
-      saveStoredData(stateData);
-      alert("🎉 9명 전원 집결 출석 및 8대 명소 100% 관람 완료! 거울못 식당 회식 입장이 잠금 해제되었습니다!");
+
+      saveStoredState(state);
+      alert("🎉 9명 전원 출석 및 상설/특별전시 Pick 완주 완료! 거울못 식당 입장이 승인되었습니다!");
     }
 
-    // Modal & Lightbox Helpers
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-
+    // Helpers
+    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
     function openLightbox(src, caption) {
       document.getElementById('lightboxImg').src = src;
       document.getElementById('lightboxCaption').textContent = caption || '';
@@ -1260,7 +1065,9 @@
 
     function renderAll() {
       initUserDropdown();
-      renderSpots();
+      renderStatistics();
+      renderExhibitsGrid('permGrid', permanentExhibits, 'perm');
+      renderExhibitsGrid('specGrid', specialExhibits, 'spec');
       renderTeamDashboard();
     }
 
