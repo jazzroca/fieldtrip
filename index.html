@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>국립중앙박물관 Field Trip · 부품기술연구팀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e7;--card:#fffdf8;--ink:#23201b;--sub:#6b6458;--line:#e3dac8;--ac:#1f3a5f;--seal:#c63a2b;--ok:#2f7d5b;--shadow:0 2px 10px rgba(60,40,10,.10)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14120f;--card:#1e1b16;--ink:#f1ebdd;--sub:#a79f8d;--line:#3a352b;--ac:#8fb4e6;--seal:#ef6a58;--ok:#59c493;--shadow:0 2px 10px rgba(0,0,0,.5)}}
+:root[data-theme="dark"]{--bg:#14120f;--card:#1e1b16;--ink:#f1ebdd;--sub:#a79f8d;--line:#3a352b;--ac:#8fb4e6;--seal:#ef6a58;--ok:#59c493;--shadow:0 2px 10px rgba(0,0,0,.5)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;line-height:1.6;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+.wrap{max-width:640px;margin:0 auto;padding:16px}
+header{padding:8px 0 14px}
+.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--seal);font-weight:700}
+h1{font-family:"Noto Serif KR",serif;font-size:26px;line-height:1.3;margin:4px 0 6px}
+.lead{color:var(--sub);font-size:14px;margin:0}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow);margin-bottom:14px}
+.me{display:flex;gap:8px}
+.me input,textarea{flex:1;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);min-width:0}
+button,.btn{font:inherit;font-weight:700;font-size:14px;border:0;border-radius:10px;padding:10px 14px;background:var(--ac);color:#fff;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+[data-theme="dark"] button,[data-theme="dark"] .btn{color:#10151c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) button,:root:not([data-theme="light"]) .btn{color:#10151c}}
+.ghost{background:transparent;color:var(--ac)!important;border:1px solid var(--line)}
+.prog{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0 8px}
+.bar{height:12px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--seal),#e8a33d);transition:width .4s}
+.pt{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;font-weight:700}
+.done{display:none;text-align:center;font-family:"Noto Serif KR",serif;font-size:20px;padding:18px;border:2px dashed var(--seal);border-radius:14px;margin-bottom:14px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:16px;box-shadow:var(--shadow);position:relative}
+.ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#d9cfb8,#b9ad94);display:flex;align-items:center;justify-content:center;color:rgba(0,0,0,.35);font-family:"Noto Serif KR",serif;font-size:64px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.no{position:absolute;top:10px;left:10px;z-index:2;background:var(--ac);color:#fff;font-weight:800;border-radius:99px;min-width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:15px;padding:0 8px}
+[data-theme="dark"] .no{color:#10151c}
+.seal{position:absolute;left:50%;top:50%;z-index:3;width:min(62%,190px);aspect-ratio:1;border-radius:50%;border:6px double var(--seal);color:var(--seal);background:rgba(255,253,248,.84);display:none;align-items:center;justify-content:center;flex-direction:column;gap:4px;font-family:"Noto Serif KR",serif;font-weight:800;line-height:1.1;transform:translate(-50%,-50%) rotate(-12deg);text-align:center;box-shadow:0 0 0 3px rgba(198,58,43,.25)}
+.seal em{font-style:normal;font-size:12px;letter-spacing:.12em;font-family:"Noto Sans KR",sans-serif;font-weight:800}
+.item.on .seal{display:flex;animation:pop .4s ease-out}
+@keyframes pop{from{transform:translate(-50%,-50%) scale(2.2) rotate(-12deg);opacity:0}to{transform:translate(-50%,-50%) scale(1) rotate(-12deg);opacity:1}}
+#ov{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center}
+#ov .seal{display:flex;position:relative;left:auto;top:auto;width:min(74vw,300px);transform:rotate(-12deg);animation:pop2 .45s cubic-bezier(.2,1.3,.4,1);background:rgba(255,253,248,.95);border-width:9px}
+#ov .seal em{font-size:clamp(14px,4.2vw,20px)}
+@keyframes pop2{from{transform:scale(3) rotate(-12deg);opacity:0}to{transform:scale(1) rotate(-12deg);opacity:1}}
+.gw{overflow-x:auto}.gt{border-collapse:collapse;width:100%;font-size:13px;text-align:center}
+.gt th,.gt td{padding:6px 3px;border-bottom:1px solid var(--line)}
+.gt th:first-child{text-align:left;padding-left:2px;white-space:nowrap;max-width:70px;overflow:hidden;text-overflow:ellipsis}
+.gt td.y{color:var(--seal);font-weight:800}.gt td{color:var(--sub)}
+.gt tr.me th{color:var(--seal)}.gt tr.tot{background:var(--bg)}
+.lg{font-size:11px;color:var(--sub);margin-top:8px;line-height:1.7}
+.modal{position:fixed;inset:0;z-index:110;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:16px}
+.mb{background:var(--card);border-radius:16px;padding:18px;width:100%;max-width:380px;max-height:80vh;overflow:auto}
+.mb h3{margin:0 0 4px}.mb p{font-size:13px;color:var(--sub);margin:0 0 10px}
+.mb label{display:block;padding:9px 6px;border-bottom:1px solid var(--line);font-size:15px}
+.mb input{width:18px;height:18px;vertical-align:-3px;margin-right:8px}
+.mb .row button{flex:1}
+.body{padding:14px 16px 16px}
+.where{font-size:12px;color:var(--seal);font-weight:700}
+h2{font-family:"Noto Serif KR",serif;font-size:21px;margin:2px 0 6px}
+.sum{margin:0 0 10px;font-size:14.5px}
+.box{border-left:4px solid var(--ac);background:var(--bg);padding:8px 12px;border-radius:0 10px 10px 0;font-size:14px;margin-bottom:8px}
+.box b{display:block;font-size:12px;color:var(--ac);margin-bottom:2px}
+.names{font-size:12.5px;color:var(--ok);font-weight:700;min-height:20px;margin:6px 0}
+.acts{display:flex;gap:8px}
+.acts button{flex:1.4}.acts a{flex:1}
+.stamped button{background:var(--ok)}
+footer{font-size:12px;color:var(--sub);text-align:center;padding:10px 0 24px}
+h3{margin:0 0 8px;font-size:16px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+textarea{width:100%;min-height:64px;resize:vertical}
+.hist{display:flex;flex-direction:column;gap:7px}
+.hr{display:grid;grid-template-columns:64px 1fr 38px;gap:8px;align-items:center;font-size:13px}
+.hr .nm{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hr .tr{height:18px;background:var(--line);border-radius:6px;overflow:hidden}
+.hr .tr i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),#5f86b8);border-radius:6px;transition:width .4s}
+.hr.me .tr i{background:linear-gradient(90deg,var(--seal),#e8a33d)}
+.hr .ct{text-align:right;color:var(--sub);font-variant-numeric:tabular-nums}
+.hh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.hh h3{margin:0}.stat{font-size:12px;font-weight:700}.stat.ok{color:var(--ok)}.stat.off{color:var(--seal)}
+.empty{color:var(--sub);font-size:13px}
+.rule{margin-top:12px;border:2px solid var(--seal);border-radius:12px;padding:10px 14px;font-size:14.5px;background:var(--card)}
+.rule b{display:block;color:var(--seal);margin-bottom:2px}
+.rule u{text-decoration-color:var(--seal);text-underline-offset:3px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">PARTS TECH TEAM · FIELD TRIP</div>
+  <h1>국립중앙박물관<br>상설전시 스탬프 랠리</h1>
+  <p class="lead">핵심 부품을 관리하는 부품기술연구팀의 눈으로 보는 9가지 명품. 9개 스탬프를 모두 채워보세요.</p>
+  <div class="rule"><b>📸 미션 방법</b>작품 앞에서 <u>개인별 미션 완료 사진</u>을 찍고 카톡에 공유한 후 <u>셀프 스탬프</u>를 찍어야 합니다.</div>
+</header>
+
+<div class="panel">
+  <div class="hh"><h3>등록 현황</h3><span class="stat" id="stat"></span></div>
+  <div class="hist" id="hist"></div>
+</div>
+
+<div class="panel">
+  <div class="hh"><h3>전체 진도표</h3><span class="stat" style="color:var(--sub)">● 완료</span></div>
+  <div class="gw" id="grid"></div>
+</div>
+
+<div class="panel">
+  <h3>내 이름</h3>
+  <div class="me"><input id="name" placeholder="이름을 입력하세요" maxlength="8" autocomplete="off"><button id="save">저장</button></div>
+</div>
+
+<div class="prog">
+  <div class="pt"><span>팀 스탬프 현황</span><span id="pcount">0 / 9</span></div>
+  <div class="bar"><i id="pbar"></i></div>
+</div>
+
+<div class="done" id="done">🎉 9개 스탬프 완성!<br><small style="font-family:'Noto Sans KR';font-size:14px;color:var(--sub)">부품기술연구팀, 오늘도 한 개의 빈틈 없이 완료했습니다.</small></div>
+
+<div id="list"></div>
+
+<div class="row" style="justify-content:center;margin-bottom:8px"><button id="reset" class="ghost">초기화</button></div>
+<footer>상설전시관 위치는 현장 안내도에서 한 번 더 확인하세요 · 사진은 외부 이미지를 불러오며, 정확한 사진은 '사진 더 보기'로 확인할 수 있습니다.<br><a href="https://www.museum.go.kr" style="color:var(--ac)">국립중앙박물관 공식 사이트</a></footer>
+</div>
+
+<div id="ov"></div>
+<div class="modal" id="rs"><div class="mb">
+  <h3>초기화</h3><p>초기화할 이름을 선택하세요. 선택한 이름의 스탬프와 이름 등록이 삭제됩니다.</p>
+  <div id="rslist"></div>
+  <div class="row"><button id="rsSel">선택 초기화</button><button id="rsAll" class="ghost">전체 초기화</button></div>
+  <div class="row"><button id="rsX" class="ghost" style="flex:1">닫기</button></div>
+</div></div>
+
+<script>
+const D=[
+{n:"주먹도끼",w:"구석기 · 1층 선사·고대관",q:"Jeongok hand axe National Museum of Korea",k:"국립중앙박물관 주먹도끼 전곡리",
+s:"연천 전곡리 유적에서 나온 구석기 대표 석기. 돌덩이를 양면으로 다듬어 자르고 찍고 긁는 데 두루 썼습니다.",
+m:"인류 최초의 '범용 부품'. 하나의 형상으로 여러 기능을 해결한 다기능 설계의 출발점입니다.",
+c:"날이 좌우 대칭으로 가공된 면을 찾아보세요."},
+{n:"빗살무늬토기",w:"신석기 · 1층 선사·고대관",q:"Comb-pattern pottery National Museum of Korea",k:"국립중앙박물관 빗살무늬토기",
+s:"서울 암사동 등에서 나온 신석기 토기. 밑이 뾰족해 모래땅에 꽂아 세워 썼습니다.",
+m:"쓰이는 환경(모래 바닥)에 맞춰 형상을 정한 설계입니다. 부품도 사용 환경 조건에서 완성됩니다.",
+c:"뾰족한 밑바닥과 표면의 일정한 무늬 패턴을 확인하세요."},
+{n:"요령식동검 (비파형동검)",w:"청동기 · 1층 선사·고대관",q:"Liaoning-type bronze dagger National Museum of Korea",k:"국립중앙박물관 비파형동검",
+s:"칼날이 비파 모양으로 굽은 청동기시대 대표 무기이자 권위의 상징입니다.",
+m:"구리에 다른 금속을 섞어 성능을 높인 합금 기술. 소재 배합이 곧 성능을 결정한다는 재료기술의 원형입니다.",
+c:"칼날의 곡선과 가운데 솟은 등대(중심 마디)를 보세요."},
+{n:"팔주령",w:"청동기 · 1층 선사·고대관 (국보 제143호)",q:["화순 대곡리 청동기 일괄 팔주령","Daegok-ri Hwasun bronze bells","Bronze Ritual Bells National Treasure 143"],t:/Daegok|Taegong|대곡|143|Bell|palju|팔주령/i,k:"국립중앙박물관 팔주령 국보 143호",
+s:"전남 화순 대곡리에서 출토된 청동 의식용 방울. 여덟 갈래 가지 끝마다 방울이 달려 있습니다.",
+m:"복잡한 형상을 한 번에 주조한 정밀 주조 기술. 방울 속 소리까지 설계한 정밀 부품 제조의 원형입니다.",
+c:"여덟 갈래의 대칭 구조와 방울 안의 작은 알갱이를 찾아보세요."},
+{n:"가야 갑옷과 투구",w:"가야 · 1층 선사·고대관",q:"Gaya armor helmet National Museum of Korea",k:"국립중앙박물관 가야 갑옷 투구 고령 지산동",
+s:"경북 고령 지산동에서 출토된 가야의 철제 갑옷과 투구입니다.",
+m:"작은 철판 부재를 못과 끈으로 이어 붙인 모듈형 조립 구조. 규격 부품을 조합해 몸에 맞춘 제품이 됩니다.",
+c:"철판 조각이 이어진 이음 부분과 투구 꼭대기 구조를 확인하세요."},
+{n:"신라 금관",w:"신라 · 1층 선사·고대관",q:"Silla gold crown National Museum of Korea",k:"국립중앙박물관 신라 금관",
+s:"점무늬, 굽은 옥(곡옥), 달개(영락)로 장식된 신라 왕족의 금관입니다.",
+m:"수많은 미세 부품을 금실로 연결한 조립품. 부품 수가 많을수록 접합과 품질 관리가 핵심입니다.",
+c:"흔들리는 달개와 곡옥을 가까이서 세어보세요."},
+{n:"경천사지 십층석탑",w:"고려 · 1층 역사의 길 (국보 제86호)",q:"Gyeongcheonsa Ten-story Stone Pagoda National Museum of Korea",k:"국립중앙박물관 경천사지 십층석탑",
+s:"1348년 고려 때 세운 대리석 탑으로 높이는 약 13.5m입니다. 박물관 중앙에서 위용을 드러냅니다.",
+m:"수많은 대리석 부재를 정밀하게 맞춰 쌓은 조립식 구조. 해체와 복원이 가능했기에 지금의 모습으로 남았습니다.",
+c:"층마다 새겨진 불상과 건물 모양 조각을 올려다보세요."},
+{n:"고려청자",w:"고려 · 2층 중·근세관",q:"Goryeo celadon National Museum of Korea",k:"국립중앙박물관 고려청자 상감",
+s:"비색의 유약과 상감 기법이 돋보이는 고려의 대표 도자기입니다.",
+m:"표면을 파고 다른 흙을 채우는 상감은 이종 소재 결합 기술. 소성 온도와 유약을 미세하게 제어해야 하는 공정이 곧 품질입니다.",
+c:"푸른 빛깔(비색)과 흰색·검은색으로 메운 무늬를 비교해 보세요."},
+{n:"금동반가사유상",w:"삼국 · 2층 사유의 방 (국보 제78호·제83호)",q:"Pensive Bodhisattva National Treasure 83 National Museum of Korea",k:"국립중앙박물관 사유의 방 반가사유상",
+f:"https://commons.wikimedia.org/wiki/Special:FilePath/Pensive%20Bodhisattva%2001.jpg?width=700",
+s:"한쪽 다리를 다른 무릎에 올리고 손끝을 뺨에 댄 채 생각에 잠긴 미륵보살상. 박물관의 대표 소장품입니다.",
+m:"1,400년 넘게 형태를 유지한 구리 합금 주조와 금도금. 제품 수명과 신뢰성의 궁극적인 모범입니다.",
+c:"오묘한 미소와 몸의 균형을 천천히 앉아서 감상하세요."}
+];
+/* 실시간 공유 서버: Firebase Realtime Database 주소를 아래에 넣으세요. (끝에 / 없이)
+   예) https://myproject-default-rtdb.asia-southeast1.firebasedatabase.app
+   비워두면 이 폰에만 저장됩니다. */
+const DB='';
+const HASH='2a3b709600584719bbc8eeb1d894a141e93aced5ad8ed05b01f67e91b523df83';
+const $=id=>document.getElementById(id);
+const ls={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const allNames=()=>[...new Set([...nm,...Object.values(st).flat()])];
+function sealHTML(n){const f=n.length<=3?30:n.length<=5?24:18;return `<div class="seal"><b style="font-size:${f}px">${esc(n)}</b><em>MISSION<br>COMPLETE</em></div>`}
+function bigSeal(n){const o=$('ov');o.innerHTML=sealHTML(n);o.style.display='flex';clearTimeout(bigSeal.t);bigSeal.t=setTimeout(()=>o.style.display='none',1700)}
+$('ov').onclick=()=>{$('ov').style.display='none'};
+function grid(){
+  const names=allNames().sort((a,b)=>a.localeCompare(b));
+  let h='<table class="gt"><tr><th>이름</th>'+D.map((_,i)=>`<th>${i+1}</th>`).join('')+'<th>계</th></tr>';
+  names.forEach(n=>{let c=0;const cells=D.map((_,i)=>{const on=(st[i+1]||[]).includes(n);if(on)c++;return `<td class="${on?'y':''}">${on?'●':'·'}</td>`}).join('');h+=`<tr class="${n===me?'me':''}"><th>${esc(n)}</th>${cells}<td><b>${c}/9</b></td></tr>`});
+  h+='<tr class="tot"><th>전체</th>'+D.map((_,i)=>{const c=(st[i+1]||[]).length;return `<td class="${c?'y':''}">${c||'·'}</td>`}).join('')+`<td><b>${D.filter((_,i)=>(st[i+1]||[]).length).length}/9</b></td></tr></table>`;
+  $('grid').innerHTML=(names.length?h:'<div class="empty">등록된 이름이 없습니다.</div>')+'<div class="lg">'+D.map((d,i)=>`${i+1} ${d.n.split(' ')[0]}`).join(' · ')+'</div>';
+}
+const nk=n=>'n_'+n.replace(/[.$#\[\]\/]/g,'_');
+let me=ls.get('nmk_me',''),st={},nm=[],last='',online=false;
+if(!DB){st=ls.get('nmk_st',{});nm=ls.get('nmk_nm',[])}
+$('name').value=me;
+
+async function api(method,path,body){
+  const r=await fetch(DB+path+'.json',{method,body:body===undefined?undefined:JSON.stringify(body)});
+  if(!r.ok)throw 0;return r.json();
+}
+async function sync(){
+  if(!DB)return;
+  try{
+    const d=(await api('GET',''))||{};
+    const s2={};Object.entries(d.stamps||{}).forEach(([k,v])=>{s2[k.slice(1)]=Object.keys(v||{}).map(x=>x.slice(2))});
+    const n2=Object.keys(d.names||{}).map(x=>x.slice(2));
+    online=true;const sig=JSON.stringify([s2,n2]);
+    if(sig!==last){last=sig;st=s2;nm=n2;render()}else setStat();
+  }catch(e){online=false;setStat()}
+}
+function setStat(){
+  const e=$('stat');
+  if(!DB){e.textContent='개인 저장 모드';e.className='stat off'}
+  else if(online){e.textContent='● 실시간 공유 중';e.className='stat ok'}
+  else{e.textContent='연결 끊김 · 재시도 중';e.className='stat off'}
+}
+function hist(){
+  const names=[...new Set([...nm,...Object.values(st).flat()])];
+  const cnt=n=>Object.values(st).filter(a=>a.includes(n)).length;
+  const rows=names.map(n=>[n,cnt(n)]).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  $('hist').innerHTML=rows.length?rows.map(([n,c])=>`<div class="hr${n===me?' me':''}"><span class="nm">${esc(n)}</span><span class="tr"><i style="width:${c/9*100}%"></i></span><span class="ct">${c}/9</span></div>`).join(''):'<div class="empty">아직 등록된 이름이 없습니다. 아래에서 이름을 저장하세요.</div>';
+  setStat();grid();
+}
+$('save').onclick=async()=>{
+  const v=$('name').value.trim();if(!v)return;
+  me=v;ls.set('nmk_me',me);
+  if(!nm.includes(me))nm.push(me);
+  if(DB){try{await api('PUT','/names/'+nk(me),true)}catch(e){}sync()}else ls.set('nmk_nm',nm);
+  hist();$('save').textContent='저장됨 ✓';setTimeout(()=>$('save').textContent='저장',1200);
+};
+
+function render(){
+  const l=$('list');l.innerHTML='';let n=0;
+  D.forEach((d,i)=>{
+    const id=i+1,ns=st[id]||[],on=ns.length>0,mine=ns.includes(me);if(on)n++;
+    const e=document.createElement('article');e.className='item'+(on?' on':'')+(mine?' stamped':'');
+    e.innerHTML=`<div class="ph" id="ph${id}"><span class="no">${id}</span>${sealHTML(ns[ns.length-1]||'')}${id}</div>
+    <div class="body"><div class="where">${d.w}</div><h2>${d.n}</h2><p class="sum">${d.s}</p>
+    <div class="box"><b>부품기술 관점의 의미</b>${d.m}</div>
+    <div class="box"><b>확인 포인트</b>${d.c}</div>
+    <div class="names">${on?'✔ '+ns.map(esc).join(', '):''}</div>
+    <div class="acts"><button data-i="${id}">${mine?'내 스탬프 취소':'스탬프 찍기'}</button><a class="btn ghost" target="_blank" rel="noopener" href="https://search.naver.com/search.naver?where=image&query=${encodeURIComponent(d.k)}">사진 더 보기</a></div></div>`;
+    l.appendChild(e);
+    if(cache[id])setImg(id,cache[id]);
+  });
+  $('pcount').textContent=`${n} / 9`;$('pbar').style.width=(n/9*100)+'%';
+  $('done').style.display=n===9?'block':'none';
+  document.querySelectorAll('.acts button').forEach(b=>b.onclick=()=>stamp(+b.dataset.i));
+  hist();
+}
+async function stamp(id){
+  if(!me){$('name').focus();window.scrollTo({top:0,behavior:'smooth'});alert('먼저 이름을 입력하고 저장해 주세요.');return}
+  const a=st[id]||(st[id]=[]),k=a.indexOf(me),add=k<0;
+  if(!add&&!confirm('내 스탬프를 취소할까요?'))return;
+  if(add)a.push(me);else a.splice(k,1);
+  if(add)bigSeal(me);
+  if(!nm.includes(me))nm.push(me);
+  render();
+  if(DB){
+    try{
+      await api('PUT','/names/'+nk(me),true);
+      await api(add?'PUT':'DELETE','/stamps/i'+id+'/'+nk(me),add?true:undefined);
+    }catch(e){online=false;setStat()}
+    sync();
+  }else{ls.set('nmk_st',st);ls.set('nmk_nm',nm)}
+}
+const cache={};
+function setImg(id,u){
+  cache[id]=u;const p=$('ph'+id);if(!p||p.querySelector('img'))return;
+  const im=new Image();im.alt=D[id-1].n;im.referrerPolicy='no-referrer';
+  im.onload=()=>p.appendChild(im);im.src=u;
+}
+async function findImg(d){
+  for(const q of [].concat(d.q)){
+    try{
+      const r=await (await fetch('https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url|mime&iiurlwidth=700&gsrsearch='+encodeURIComponent(q))).json();
+      const pg=Object.values(r.query.pages).sort((a,b)=>a.index-b.index).find(p=>p.imageinfo&&/jpeg|png/.test(p.imageinfo[0].mime)&&(!d.t||d.t.test(p.title)));
+      if(pg)return pg.imageinfo[0].thumburl||pg.imageinfo[0].url;
+    }catch(e){}
+  }
+  try{
+    const r=await (await fetch('https://ko.wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrlimit=5&prop=pageimages&pithumbsize=700&gsrsearch='+encodeURIComponent(d.n.split(' ')[0]))).json();
+    const pg=Object.values(r.query.pages).sort((a,b)=>a.index-b.index).find(p=>p.thumbnail);
+    if(pg)return pg.thumbnail.source;
+  }catch(e){}
+  return '';
+}
+async function load(){
+  for(let i=0;i<D.length;i++){
+    const d=D[i];
+    if(d.f){setImg(i+1,d.f);continue}
+    const u=await findImg(d);if(u)setImg(i+1,u);
+  }
+}
+async function sha(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+$('reset').onclick=async()=>{
+  const pw=prompt('비밀번호를 입력하세요');if(pw===null)return;
+  let ok=false;try{ok=(await sha('nmk-parts:'+pw.trim()))===HASH}catch(e){}
+  if(!ok){alert('비밀번호가 올바르지 않습니다.');return}
+  const ns=allNames();
+  $('rslist').innerHTML=ns.length?ns.map(n=>`<label><input type="checkbox" value="${esc(n)}">${esc(n)}</label>`).join(''):'<div class="empty">등록된 이름이 없습니다.</div>';
+  $('rs').style.display='flex';
+};
+$('rsX').onclick=()=>{$('rs').style.display='none'};
+$('rsSel').onclick=async()=>{
+  const sel=[...document.querySelectorAll('#rslist input:checked')].map(i=>i.value);
+  if(!sel.length){alert('초기화할 이름을 선택하세요.');return}
+  if(!confirm(sel.join(', ')+' 의 스탬프와 이름을 삭제할까요?'))return;
+  Object.keys(st).forEach(id=>{st[id]=st[id].filter(x=>!sel.includes(x))});
+  nm=nm.filter(x=>!sel.includes(x));last='';
+  if(DB){try{await Promise.all(sel.flatMap(n=>[api('DELETE','/names/'+nk(n)),...D.map((_,i)=>api('DELETE','/stamps/i'+(i+1)+'/'+nk(n)))]))}catch(e){alert('서버 반영에 실패했습니다.')}}
+  ls.set('nmk_st',st);ls.set('nmk_nm',nm);
+  $('rs').style.display='none';render();sync();
+};
+$('rsAll').onclick=async()=>{
+  if(!confirm('모든 스탬프와 등록된 이름이 삭제됩니다. 계속할까요?'))return;
+  st={};nm=[];last='';
+  if(DB){try{await api('DELETE','')}catch(e){alert('서버 초기화에 실패했습니다.');return}}
+  ls.set('nmk_st',{});ls.set('nmk_nm',[]);
+  $('rs').style.display='none';render();sync();
+};
+render();load();
+if(DB){sync();setInterval(sync,3000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync()})}
+</script>
+</body>
+</html>
